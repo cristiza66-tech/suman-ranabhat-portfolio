@@ -35,7 +35,7 @@ export default function ExperiencePage() {
       <PageHero
         eyebrow="Timeline & Career"
         title="Teaching Pathway & Professional Milestones"
-        subtitle="A chronological view of academic foundations, intensive practical accounting training, and dedicated teaching practice in Pokhara."
+        subtitle="A chronological view of academic foundations, practical accounting training, and dedicated teaching practice in Pokhara."
         primaryAction={{ label: "Get in Touch", href: "/contact" }}
         secondaryAction={{ label: "Explore Tuition Offerings", href: "/education" }}
         metaList={[
@@ -53,8 +53,8 @@ export default function ExperiencePage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Chronological Progression"
-            title="From Foundational Commerce to Dedicated Teaching & Education"
-            subtitle="The pathway that shaped deep accounting knowledge and a concept-driven teaching method."
+            title="From Commerce Studies to Active Teaching & Practice"
+            subtitle="The pathway that built deep accounting knowledge and a concept-driven teaching method."
             align="center"
           />
 
@@ -232,13 +232,13 @@ export default function ExperiencePage() {
               className="text-xl sm:text-2xl font-bold"
               style={{ color: "var(--color-fg-light)" }}
             >
-              Continuous Professional Development &amp; Ethical Standards
+              Continuous Professional Development & Ethical Standards
             </h3>
             <p
               className="text-sm mt-2.5 max-w-xl leading-relaxed"
               style={{ color: "var(--color-dark-fg-muted)" }}
             >
-              Committed to lifelong learning through regular participation in taxation seminars, accounting standard updates, and auditing workshops to ensure advice and teaching remain cutting-edge.
+              Committed to staying current through participation in taxation seminars, accounting standard updates, and auditing workshops.
             </p>
             <div className="mt-6">
               <Link href="/contact" className="btn-gold text-sm font-semibold">

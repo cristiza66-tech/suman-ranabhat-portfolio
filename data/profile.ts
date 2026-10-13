@@ -74,7 +74,7 @@ export const profile = {
   title: "Commerce & Accounting Educator",
   role: "Commerce & Accounting Educator · Academic Mentor",
   eyebrow: "Academic Mentorship & Concept-First Tuition",
-  tagline: "Helping school & college students build strong fundamentals and achieve better results.",
+  tagline: "Concept-first commerce & accounting tuition for school and college students in Pokhara.",
   location: "Pokhara, Gandaki Province, Nepal",
   email: "",
   phone: "+977 9805864812",
@@ -87,14 +87,14 @@ export const profile = {
   portrait: "/images/suman-ranabhat.png",
   portraitAlt: "Suman Ranabhat - Commerce & Accounting Educator in Pokhara, Nepal",
   summary:
-    "Dedicated Commerce & Accounting Educator in Pokhara, Nepal. Guiding school, +2, and undergraduate commerce students with concept-first teaching, personal attention, and structured exam preparation.",
+    "Commerce & Accounting Educator in Pokhara, Nepal — guiding Class 11/12 and undergraduate students with concept-first teaching and structured exam preparation.",
   heroStatement:
-    "Clear concepts. Strong fundamentals. Better academic results.",
-  bio: "Suman Ranabhat is a dedicated Commerce & Accounting Educator in Pokhara, Nepal with deep expertise in accounting principles, taxation laws, and financial analysis. Focused on bridging classroom theory with practical financial understanding, Suman helps school and college students build rock-solid foundational concepts rather than relying on rote memorization—empowering learners to achieve outstanding academic results and lifelong confidence.",
+    "Clear concepts. Strong fundamentals. Better results.",
+  bio: "Commerce & Accounting Educator in Pokhara, Nepal with expertise in accounting principles, taxation, and financial analysis. Helping secondary and undergraduate students build genuine conceptual understanding — not rote memorization — so they excel in exams and beyond.",
   teachingPhilosophySummary:
-    "True learning happens when concepts are understood from first principles and connected to practical financial logic, rather than memorized for temporary exam recall.",
+    "Concepts understood from first principles outlast any formula memorized for exam day.",
   servicePhilosophySummary:
-    "Professional financial guidance must combine rigorous technical accuracy with practical commercial foresight, upholding the highest standards of integrity and confidentiality.",
+    "Technical accuracy, practical foresight, and strict integrity — the foundation of every advisory engagement.",
   social: [
     { label: "WhatsApp", href: "https://wa.me/9779805864812" },
   ],
@@ -120,30 +120,30 @@ export const teachingPrinciples: TeachingPrinciple[] = [
   {
     number: "01",
     title: "Concept First",
-    tagline: "Deconstruct the 'Why' Before the 'How'",
+    tagline: "Understand the Why Before the How",
     description:
-      "Accounting and finance are logical languages. We break down the fundamental economic and statutory logic behind every rule so students never need to rely on blind formula memorization.",
+      "Every rule has a logic. We decode the reasoning behind accounting entries so students solve problems from understanding, not memory.",
   },
   {
     number: "02",
     title: "Practical Context",
-    tagline: "Classroom Theory Meets Real-World Practice",
+    tagline: "Theory Grounded in Real Practice",
     description:
-      "Drawing directly from practical accounting and financial experience, classroom discussions incorporate real financial statements, tax filings, and corporate scenarios to make complex topics intuitive.",
+      "Real financial statements, tax filings, and business scenarios bring classroom topics to life and make abstract concepts intuitive.",
   },
   {
     number: "03",
     title: "Individual Attention",
-    tagline: "Targeted Diagnosis of Conceptual Bottlenecks",
+    tagline: "Personal Guidance for Each Student",
     description:
-      "Every student encounters different obstacles. Small batch sizes and dedicated doubt-clearing sessions ensure individual weaknesses are diagnosed early and resolved thoroughly.",
+      "Small batches and dedicated doubt-clearing sessions ensure every student's gaps are identified and resolved — not glossed over.",
   },
   {
     number: "04",
     title: "Exam Strategy",
-    tagline: "Structured Answer Writing & Time Management",
+    tagline: "Answer Writing & Time Management",
     description:
-      "Mastering concepts must be paired with disciplined exam execution. We train students on working notes presentation, step-marking optimization, and high-pressure time control.",
+      "Beyond mastering content, students learn working-note presentation, step-marking optimization, and disciplined exam execution.",
   },
 ];
 
@@ -155,12 +155,12 @@ export const educationOfferings: EducationOffering[] = [
     level: "Class 11 & 12 (NEB Commerce)",
     targetAudience: "Secondary (+2) Commerce Students",
     description:
-      "Master foundational double-entry bookkeeping, journalizing, ledger posting, trial balance, final accounts, and accounting adjustments tailored to the NEB syllabus.",
+      "Double-entry bookkeeping, ledger posting, trial balance, and final accounts — built to match the NEB syllabus with a strong conceptual foundation.",
     highlights: [
-      "Step-by-step mastery of double-entry rules and journal entries",
-      "Thorough practice of final accounts with balance sheet adjustments",
-      "Unit-wise revision tests and NEB board past question solving",
-      "Personalized doubt clearance and step-marking presentation coaching",
+      "Journal entries and double-entry rules from first principles",
+      "Final accounts with balance sheet adjustments",
+      "NEB board past papers and unit-wise revision tests",
+      "Step-marking presentation and doubt clearance",
     ],
     mode: "Hybrid",
   },
@@ -171,12 +171,12 @@ export const educationOfferings: EducationOffering[] = [
     level: "BBS, BBA & B.Com Bachelor Level",
     targetAudience: "Undergraduate Commerce & Management Students",
     description:
-      "Comprehensive mastery of fundamental to advanced financial accounting, partnership accounts, company financial statements, cash flow statements, and financial analysis.",
+      "Partnership accounts, company financial statements, cash flow analysis, and financial reporting — covered systematically with past paper practice.",
     highlights: [
-      "In-depth coverage of accounting principles and standard double-entry logic",
-      "Step-by-step problem-solving for balance sheets, cash flow, and adjustments",
-      "Regular chapter-wise unit assessments with personalized feedback",
-      "University examination past paper analysis and model questions",
+      "Core accounting principles and double-entry logic",
+      "Balance sheet, cash flow, and adjustment problem-solving",
+      "Chapter-wise assessments with individual feedback",
+      "University past paper analysis and model questions",
     ],
     mode: "Hybrid",
   },
@@ -187,11 +187,11 @@ export const educationOfferings: EducationOffering[] = [
     level: "BBS, BBA & Management Undergraduates",
     targetAudience: "Commerce Undergraduates & Management Students",
     description:
-      "Clear conceptual understanding of cost concepts, material & labor costing, overhead allocation, marginal costing, standard costing, and budgetary control mechanisms.",
+      "Material, labor, and overhead costing; marginal costing; standard costing; and budgetary control — with formula derivation, not memorization.",
     highlights: [
-      "Logical derivation of formulas rather than rote retention",
-      "Real-world managerial decision-making problem analysis",
-      "Variance analysis mastered through structured visual frameworks",
+      "Logical formula derivation, not rote retention",
+      "Managerial decision-making problem analysis",
+      "Variance analysis using structured visual frameworks",
       "Intensive numerical practice sets and formula sheets",
     ],
     mode: "Hybrid",
@@ -203,12 +203,12 @@ export const educationOfferings: EducationOffering[] = [
     level: "BBS, BBA & Bachelor Level Commerce",
     targetAudience: "Advanced Commerce & Business Students",
     description:
-      "Systematic study of Income Tax, Value Added Tax (VAT), and fundamental corporate legislation with practical calculation exercises and statutory interpretations.",
+      "Income Tax, VAT, and core corporate legislation with practical computation exercises and structured answer drafting.",
     highlights: [
       "Head-wise income computation with current fiscal provisions",
-      "VAT calculation rules, input tax credit mechanisms, and exemptions",
-      "Contract act, company law essentials, and legal compliance structures",
-      "Practical case law discussions and structured answer drafting",
+      "VAT rules, input tax credit, and exemptions",
+      "Contract act, company law, and compliance structures",
+      "Case discussions and structured answer drafting",
     ],
     mode: "Hybrid",
   },
@@ -219,61 +219,61 @@ export const services: CAService[] = [
     id: "tax-compliance-advisory",
     title: "Taxation & Regulatory Advisory",
     icon: "receipt",
-    shortDesc: "Strategic direct & indirect tax planning, compliance filings, and dispute advisory.",
+    shortDesc: "Direct & indirect tax planning, compliance filings, and dispute representation.",
     fullDesc:
-      "End-to-end taxation solutions designed to ensure strict compliance with prevailing tax legislations while identifying legitimate tax efficiencies for businesses and individuals.",
+      "End-to-end taxation support covering income tax, VAT, and TDS — ensuring full compliance while identifying legitimate efficiencies for businesses and individuals.",
     deliverables: [
-      "Income tax computation, annual returns filing, and advance tax planning",
-      "Value Added Tax (VAT) / GST periodic filing and reconciliation",
-      "Tax assessment handling, dispute representation, and reply drafting",
-      "Cross-border tax guidance, withholding tax (TDS) review, and advisory",
+      "Income tax computation, annual returns, and advance tax planning",
+      "VAT / GST periodic filing and reconciliation",
+      "Tax assessment handling and dispute representation",
+      "TDS review and cross-border tax advisory",
     ],
-    targetClients: "Corporations, SMEs, Proprietorships, and High-Net-Worth Individuals",
+    targetClients: "Corporations, SMEs, Proprietorships & Individuals",
   },
   {
     id: "accounting-financial-reporting",
     title: "Accounting & Financial Reporting",
     icon: "calculator",
-    shortDesc: "Systematic bookkeeping, standard financial statements preparation, and MIS reporting.",
+    shortDesc: "Bookkeeping, NFRS/IFRS financial statements, and MIS reporting.",
     fullDesc:
-      "Reliable and structured accounting management that gives business leadership total clarity over cash flows, operating margins, and balance sheet strength.",
+      "Structured accounting that gives leadership clear visibility over cash flow, margins, and balance sheet health.",
     deliverables: [
-      "Design and implementation of standard chart of accounts",
-      "Periodic financial statement preparation in accordance with NFRS / IFRS / GAAP",
-      "Management Information Systems (MIS) reporting and KPI dashboarding",
-      "Bank reconciliations, fixed asset register maintenance, and ledger scrubbing",
+      "Chart of accounts setup and implementation",
+      "Financial statements per NFRS / IFRS / GAAP",
+      "MIS reporting and KPI dashboarding",
+      "Bank reconciliation, fixed asset register, and ledger management",
     ],
-    targetClients: "Growing businesses, startups, and established enterprises",
+    targetClients: "Startups, growing businesses & established enterprises",
   },
   {
     id: "audit-assurance-support",
-    title: "Audit & Assurance Support",
+    title: "Internal Audit and Assurance Support",
     icon: "shield-check",
-    shortDesc: "Independent statutory review, internal control assessments, and compliance audits.",
+    shortDesc: "Internal control reviews, statutory audit preparation, and compliance checks.",
     fullDesc:
-      "Meticulous evaluation of financial records, internal control frameworks, and statutory compliance to safeguard organizational integrity and ensure stakeholder trust.",
+      "Independent evaluation of financial records and controls to protect organizational integrity and maintain stakeholder confidence.",
     deliverables: [
       "Internal audit and risk control matrix assessment",
-      "Statutory and tax audit preparation and file facilitation",
-      "Stock and physical inventory verification audits",
-      "Compliance audits against industry regulations and company policies",
+      "Statutory and tax audit file preparation",
+      "Stock and inventory verification audits",
+      "Compliance audits against regulations and company policy",
     ],
-    targetClients: "Private companies, institutions, and regulated entities",
+    targetClients: "Private companies, institutions & regulated entities",
   },
   {
     id: "business-advisory-due-diligence",
     title: "Business Advisory & Due Diligence",
     icon: "briefcase",
-    shortDesc: "Feasibility evaluations, capital budgeting, financial health checks, and advisory.",
+    shortDesc: "Feasibility studies, financial due diligence, and strategic planning support.",
     fullDesc:
-      "High-level strategic support for entrepreneurs and business leaders planning expansions, structural adjustments, or seeking investor-grade financial validation.",
+      "Strategic financial support for entrepreneurs and business leaders — covering expansions, restructuring, and investor-grade financial validation.",
     deliverables: [
-      "Financial modeling, sensitivity projections, and project reports",
-      "Financial due diligence for mergers, acquisitions, or partnerships",
+      "Financial modeling, sensitivity analysis, and project reports",
+      "Due diligence for mergers, acquisitions, and partnerships",
       "Working capital optimization and cash flow forecasting",
-      "Business restructuring, entity incorporation, and statutory setup",
+      "Entity incorporation and statutory setup",
     ],
-    targetClients: "Entrepreneurs, venture founders, and investment groups",
+    targetClients: "Entrepreneurs, founders & investment groups",
   },
 ];
 
@@ -284,7 +284,7 @@ export const qualifications: Qualification[] = [
     body: "Advanced Accounting & Commerce Specialization",
     year: "Active Practice",
     category: "Professional",
-    description: "Extensive subject mastery across Financial Reporting, Cost Accounting, Corporate Law, Strategic Financial Management, and Direct/Indirect Taxation.",
+    description: "Subject mastery across Financial Reporting, Cost Accounting, Corporate Law, and Direct/Indirect Taxation.",
   },
   {
     id: "academic-degree",
@@ -292,7 +292,7 @@ export const qualifications: Qualification[] = [
     body: "Recognized University",
     year: "Graduated",
     category: "Academic",
-    description: "Core specialization in Accounting, Financial Analysis, Corporate Governance, and Quantitative Business Economics.",
+    description: "Specialization in Accounting, Financial Analysis, Corporate Governance, and Business Economics.",
   },
   {
     id: "professional-membership",
@@ -300,7 +300,7 @@ export const qualifications: Qualification[] = [
     body: "Commerce & Financial Education Forum",
     year: "Active",
     category: "Membership",
-    description: "Committed to continuous learning, academic excellence, student mentorship, and standard accounting ethics.",
+    description: "Active in continuous learning, student mentorship, and upholding accounting ethics.",
   },
 ];
 
@@ -311,9 +311,9 @@ export const experienceTimeline: ExperienceMilestone[] = [
     role: "Academic Foundation & Commerce Studies",
     type: "Academic",
     description:
-      "Deep immersion in commerce, mathematics, economics, and double-entry accounting fundamentals, laying the groundwork for professional pursuits.",
+      "Strong grounding in commerce, mathematics, economics, and double-entry accounting — forming the base for professional practice.",
     keyContributions: [
-      "Excellence in accounting and quantitative business methods",
+      "Distinction in accounting and quantitative business methods",
       "Initiated peer-to-peer concept study groups",
     ],
   },
@@ -323,22 +323,22 @@ export const experienceTimeline: ExperienceMilestone[] = [
     role: "Accounting & Practical Financial Training",
     type: "Professional Practice",
     description:
-      "Extensive hands-on training covering statutory accounts, internal reviews, tax computations, and client representation across various commercial sectors.",
+      "Hands-on experience in statutory accounts, tax computations, internal reviews, and client advisory across commercial sectors.",
     keyContributions: [
-      "Conducted accounting reviews and compliance audits for mid-to-large business entities",
-      "Drafted tax assessment submissions and corporate financial reports",
+      "Accounting reviews and compliance audits for mid-to-large enterprises",
+      "Tax assessment submissions and corporate financial reports",
     ],
   },
   {
     id: "milestone-3",
     period: "Teaching Practice",
-    role: "Independent Teaching & Student Mentoring Practice",
+    role: "Independent Teaching & Student Mentoring",
     type: "Education",
     description:
-      "Established dedicated tuition batches for secondary, +2, and undergraduate commerce students, refining the concept-first pedagogical framework.",
+      "Launched tuition batches for Class 11/12 and undergraduate commerce students, refining the concept-first teaching approach.",
     keyContributions: [
-      "Developed proprietary question banks and visual concept summaries",
-      "Mentored students who achieved standout performance in board and university examinations",
+      "Developed question banks and visual concept summaries",
+      "Mentored students to standout results in board and university exams",
     ],
   },
   {
@@ -348,10 +348,10 @@ export const experienceTimeline: ExperienceMilestone[] = [
     organization: "Independent Practice",
     type: "Education",
     description:
-      "Leading dedicated tuition batches and academic mentorship programs alongside practical accounting, tax, and financial advisory services.",
+      "Running active tuition batches and academic mentorship alongside tax, accounting, and financial advisory services.",
     keyContributions: [
-      "Mentoring secondary and bachelor commerce students to master accounting logic and excel in board exams",
-      "Advising businesses and individuals on bookkeeping, tax compliance, and financial strategy",
+      "Coaching secondary and bachelor students in accounting logic and exam strategy",
+      "Advising businesses on bookkeeping, tax compliance, and financial planning",
     ],
   },
 ];
@@ -361,7 +361,7 @@ export const testimonials: Testimonial[] = [
     id: "t1",
     type: "student",
     quote:
-      "Learning accountancy with Suman Sir shifted my entire mindset from memorizing steps to understanding the underlying logic. His real-world examples from actual accounting practice made complex concepts simple.",
+      "Suman Sir shifted my mindset from memorizing steps to understanding the logic. Real-world examples made complex concepts click.",
     author: "Commerce Student",
     designation: "Class 12 / BBS Aspirant",
     context: "Accountancy & Taxation Batch",
@@ -371,20 +371,20 @@ export const testimonials: Testimonial[] = [
     id: "t2",
     type: "client",
     quote:
-      "Suman delivers meticulous attention to detail on our tax compliance and reporting requirements. His proactive communication and clear explanations give our management complete peace of mind.",
+      "Meticulous attention to detail on our tax compliance and reporting. His clear communication gives management complete peace of mind.",
     author: "Business Client",
     designation: "Managing Director / Business Owner",
-    context: "Tax & Financial Advisory Engagement",
+    context: "Tax & Financial Advisory",
     isPlaceholder: false,
   },
   {
     id: "t3",
     type: "student",
     quote:
-      "The exam strategy and answer presentation sessions were game-changers. He doesn't just teach the syllabus; he teaches how examiners assess working notes and step-marking.",
+      "The exam strategy sessions were a game-changer. He teaches how examiners assess working notes — not just the syllabus.",
     author: "BBS Commerce Student",
-    designation: "Bachelor Level Examination Candidate",
-    context: "Professional Mentorship Cohort",
+    designation: "Bachelor Level Candidate",
+    context: "Academic Mentorship Cohort",
     isPlaceholder: false,
   },
 ];
@@ -392,38 +392,38 @@ export const testimonials: Testimonial[] = [
 export const faqs: FAQ[] = [
   {
     category: "education",
-    question: "What tuition classes and subjects are available in Pokhara?",
+    question: "What subjects are available for tuition?",
     answer:
-      "Specialized coaching is available in Pokhara and online for Financial Accounting, Cost & Management Accounting, Taxation, and Commercial Laws for Class 11, Class 12, BBS, and BBA levels.",
+      "Financial Accounting, Cost & Management Accounting, Taxation, and Commercial Laws — for Class 11, 12, BBS, and BBA levels, in Pokhara and online.",
   },
   {
     category: "education",
-    question: "Are tuition classes available online or in-person in Pokhara?",
+    question: "Are classes available online or in-person?",
     answer:
-      "Both options are available based on cohort scheduling. Small-group in-person sessions are held in Pokhara, and live interactive online coaching with digital revision materials is accessible across Nepal.",
+      "Both. Small-group in-person sessions are held in Pokhara; live interactive online coaching with digital materials is available across Nepal.",
   },
   {
     category: "education",
-    question: "How do you handle student doubts and personalized mentoring?",
+    question: "How are student doubts handled?",
     answer:
-      "Every batch maintains a limited student ratio. Along with structured curriculum coverage, dedicated 1-on-1 doubt resolution sessions are scheduled each week to diagnose and solve individual learning hurdles.",
+      "Batches are kept small. Weekly 1-on-1 doubt sessions are scheduled to diagnose and resolve individual learning gaps systematically.",
   },
   {
     category: "services",
-    question: "What accounting and advisory services are available in Pokhara?",
+    question: "What accounting and advisory services are offered?",
     answer:
-      "Comprehensive accounting services include Corporate & Individual Tax Advisory (Income Tax & VAT), Bookkeeping & NFRS/IFRS Financial Reporting, Internal Review Support, and Strategic Business Advisory in Pokhara and beyond.",
+      "Services include Income Tax & VAT advisory, NFRS/IFRS bookkeeping and financial reporting, internal audit support, and business advisory — in Pokhara and beyond.",
   },
   {
     category: "services",
-    question: "How can parents, students, or businesses initiate a consultation?",
+    question: "How do I initiate a consultation?",
     answer:
-      "You can submit an inquiry through our website form, connect directly on WhatsApp (+977 9805864812), or send a message. We will promptly arrange a discussion regarding your academic or financial requirements.",
+      "Submit a request via the website form or connect on WhatsApp (+977 9805864812). A response and consultation will be arranged promptly.",
   },
   {
     category: "general",
-    question: "How are professional ethics and client confidentiality maintained?",
+    question: "How is client confidentiality maintained?",
     answer:
-      "All academic mentoring and advisory services adhere strictly to professional codes of ethics, upholding objectivity, competence, due care, and complete confidentiality.",
+      "All engagements adhere to professional codes of ethics — objectivity, competence, due care, and strict confidentiality are non-negotiable.",
   },
 ];

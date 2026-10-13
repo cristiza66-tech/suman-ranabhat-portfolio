@@ -26,7 +26,7 @@ export function CredentialsOverview() {
               className="text-sm mt-4 leading-relaxed"
               style={{ color: "var(--color-fg-secondary)" }}
             >
-              Every student coaching session and advisory consultation is anchored in verified qualifications, ongoing academic development, and high professional standards.
+              Every session and consultation is anchored in verified qualifications, ongoing professional development, and high ethical standards.
             </p>
 
             <div className="flex flex-col gap-2.5 mt-6 w-full">

@@ -1,196 +1,50 @@
 @import "tailwindcss";
 
 /* ============================================================
-   DESIGN TOKEN SYSTEM — Default: Academic Navy
-   All themes override these variables on [data-theme="..."]
+   DESIGN TOKEN SYSTEM — Slate Blue (permanent theme)
    ============================================================ */
-:root,
-[data-theme="navy"] {
+:root {
   /* Backgrounds */
-  --color-bg:           #FAF9F5;
-  --color-surface:      #FFFFFF;
-  --color-surface-alt:  #F3F1EA;
-  --color-surface-dim:  #F7F5EE;
-
-  /* Foreground / Text */
-  --color-fg:           #12161A;
-  --color-fg-secondary: #475467;
-  --color-fg-muted:     #667085;
-  --color-fg-light:     #F8F9FA;
-  --color-fg-light-muted: #9BA8B8;
-
-  /* Borders */
-  --color-border:       #E6E2D8;
-  --color-border-card:  #DEDAD0;
-
-  /* Primary Accent (Navy) */
-  --color-accent:       #0E2439;
-  --color-accent-hover: #1A3957;
-  --color-accent-fg:    #FFFFFF;
-
-  /* Secondary Accent (Gold) */
-  --color-gold:         #C29B38;
-  --color-gold-hover:   #A8832A;
-  --color-gold-soft:    #EFE4CA;
-  --color-gold-fg:      #0E2439;
-
-  /* Dark Section */
-  --color-dark-bg:      #0D161F;
-  --color-dark-surface: #14202C;
-  --color-dark-border:  #23313F;
-  --color-dark-fg:      #F8F9FA;
-  --color-dark-fg-muted:#9BA8B8;
-  --color-dark-accent:  #E2CCA8;
-
-  /* Radius */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
-}
-
-/* ============================================================
-   THEME 2 — Forest Emerald
-   Calm · Premium · Modern · Educational
-   ============================================================ */
-[data-theme="emerald"] {
-  --color-bg:           #F8FAF7;
-  --color-surface:      #FFFFFF;
-  --color-surface-alt:  #EEF5EC;
-  --color-surface-dim:  #F3F8F1;
-
-  --color-fg:           #132010;
-  --color-fg-secondary: #3D5440;
-  --color-fg-muted:     #5A7060;
-  --color-fg-light:     #F5FAF4;
-  --color-fg-light-muted: #9BB8A0;
-
-  --color-border:       #D4E5D0;
-  --color-border-card:  #C8DFCA;
-
-  --color-accent:       #1A4D3A;
-  --color-accent-hover: #215E47;
-  --color-accent-fg:    #FFFFFF;
-
-  --color-gold:         #3A9A72;
-  --color-gold-hover:   #2D7A59;
-  --color-gold-soft:    #D4EDE3;
-  --color-gold-fg:      #0E2E20;
-
-  --color-dark-bg:      #0C1F15;
-  --color-dark-surface: #122B1C;
-  --color-dark-border:  #1E4030;
-  --color-dark-fg:      #F0F9F4;
-  --color-dark-fg-muted:#8BB8A0;
-  --color-dark-accent:  #A8DFC4;
-}
-
-/* ============================================================
-   THEME 3 — Charcoal Gold
-   Premium · Sophisticated · Personal Brand
-   ============================================================ */
-[data-theme="charcoal"] {
-  --color-bg:           #F7F6F2;
-  --color-surface:      #FFFFFF;
-  --color-surface-alt:  #EFECE5;
-  --color-surface-dim:  #F2F0EB;
-
-  --color-fg:           #1A1A18;
-  --color-fg-secondary: #4A4840;
-  --color-fg-muted:     #6B685F;
-  --color-fg-light:     #F8F7F4;
-  --color-fg-light-muted: #A8A49A;
-
-  --color-border:       #E2DDD4;
-  --color-border-card:  #D8D3C8;
-
-  --color-accent:       #2A2A28;
-  --color-accent-hover: #3D3D3A;
-  --color-accent-fg:    #FFFFFF;
-
-  --color-gold:         #A8882A;
-  --color-gold-hover:   #8C7020;
-  --color-gold-soft:    #EDE5C8;
-  --color-gold-fg:      #1A1410;
-
-  --color-dark-bg:      #1A1A18;
-  --color-dark-surface: #242420;
-  --color-dark-border:  #363630;
-  --color-dark-fg:      #F5F3EF;
-  --color-dark-fg-muted:#A8A49A;
-  --color-dark-accent:  #D4B870;
-}
-
-/* ============================================================
-   THEME 4 — Slate Blue
-   Modern · Clean · Professional
-   ============================================================ */
-[data-theme="slate"] {
   --color-bg:           #F5F7FA;
   --color-surface:      #FFFFFF;
   --color-surface-alt:  #EBF0F7;
   --color-surface-dim:  #F0F4F9;
 
+  /* Foreground / Text */
   --color-fg:           #0F1E2E;
   --color-fg-secondary: #3A5068;
   --color-fg-muted:     #536880;
   --color-fg-light:     #F0F5FA;
   --color-fg-light-muted: #94AABF;
 
+  /* Borders */
   --color-border:       #D0DCE8;
   --color-border-card:  #C4D4E4;
 
+  /* Primary Accent (Slate Blue) */
   --color-accent:       #1E3A5F;
   --color-accent-hover: #274E7E;
   --color-accent-fg:    #FFFFFF;
 
+  /* Secondary Accent (Blue) */
   --color-gold:         #2E6DB4;
   --color-gold-hover:   #245990;
   --color-gold-soft:    #D8E8F5;
   --color-gold-fg:      #0F1E2E;
 
+  /* Dark Section */
   --color-dark-bg:      #0A1525;
   --color-dark-surface: #101E30;
   --color-dark-border:  #1C2E44;
   --color-dark-fg:      #EEF3F8;
   --color-dark-fg-muted:#7A9AB5;
   --color-dark-accent:  #9CC2E0;
-}
 
-/* ============================================================
-   THEME 5 — Burgundy Cream
-   Academic · Traditional · Warm · Distinctive
-   ============================================================ */
-[data-theme="burgundy"] {
-  --color-bg:           #FAF5F0;
-  --color-surface:      #FFFCF9;
-  --color-surface-alt:  #F5EDE6;
-  --color-surface-dim:  #F8F0EA;
-
-  --color-fg:           #1C0F0F;
-  --color-fg-secondary: #5A3535;
-  --color-fg-muted:     #7A5050;
-  --color-fg-light:     #FAF5F0;
-  --color-fg-light-muted: #C4A898;
-
-  --color-border:       #E8D8D0;
-  --color-border-card:  #DFC8BC;
-
-  --color-accent:       #6B1E35;
-  --color-accent-hover: #862640;
-  --color-accent-fg:    #FFFFFF;
-
-  --color-gold:         #9B6B4A;
-  --color-gold-hover:   #7D5538;
-  --color-gold-soft:    #EDD9CC;
-  --color-gold-fg:      #1C0F0F;
-
-  --color-dark-bg:      #3A0E1E;
-  --color-dark-surface: #4A1826;
-  --color-dark-border:  #6B2E40;
-  --color-dark-fg:      #FAF0EC;
-  --color-dark-fg-muted:#C4A898;
-  --color-dark-accent:  #E8C4B0;
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
 }
 
 /* ============================================================
@@ -439,11 +293,6 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Theme switcher smooth transition */
-html {
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
 /* ============================================================
    INTERACTIVE HOVER UTILITIES (Pure CSS, safe in RSC)
    ============================================================ */
@@ -480,4 +329,3 @@ html {
 .btn-dark-secondary:hover {
   background-color: var(--color-accent-hover) !important;
 }
-

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Mail, Phone, MapPin, MessageSquare, ShieldCheck } from "lucide-react";
 import { profile, faqs } from "@/data/profile";
 import { pageSeo, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
-import { PageHero } from "@/components/page-hero";
 import { ContactForm } from "@/components/contact-form";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -37,20 +36,10 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
       />
-      <PageHero
-        eyebrow="Tuition Enrollment & Consultations"
-        title="Get in Touch for Tuition or Accounting Guidance"
-        subtitle="Whether you are a student or parent inquiring about upcoming tuition cohorts in Pokhara, or seeking accounting guidance, reach out for a prompt response."
-        metaList={[
-          { label: "Response Time", value: "Within 24-48 Hours" },
-          { label: "Location", value: profile.location },
-          { label: "Inquiries", value: "Tuition & Accounting" },
-        ]}
-      />
 
-      {/* Main Contact Grid */}
+      {/* Main Contact Grid — no hero, sits directly under navbar */}
       <section
-        className="py-12 md:py-18 border-b"
+        className="pt-8 pb-12 md:pt-10 md:pb-18 border-b"
         style={{ backgroundColor: "var(--color-bg)", borderColor: "var(--color-border)" }}
       >
         <div className="shell">
@@ -62,12 +51,12 @@ export default function ContactPage() {
                 style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
               >
                 <span className="eyebrow-badge mb-4">Direct Contact</span>
-                <h3
+                <h1
                   className="text-xl font-bold mt-1"
                   style={{ color: "var(--color-fg)" }}
                 >
                   {profile.name}
-                </h3>
+                </h1>
                 <p
                   className="text-xs font-semibold mt-0.5"
                   style={{ color: "var(--color-gold)" }}

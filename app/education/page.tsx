@@ -48,7 +48,7 @@ export default function EducationPage() {
       <PageHero
         eyebrow="Tuition & Accounting Education in Pokhara"
         title="Commerce & Accounting Tuition for School and College Students"
-        subtitle="Master the logic of accountancy, costing, and taxation with concept-first teaching. Available for Class 11, 12, BBS, and BBA students in Pokhara and online."
+        subtitle="Master accountancy, costing, and taxation with concept-first teaching. Available for Class 11, 12, BBS, and BBA students in Pokhara and online."
         primaryAction={{ label: "Enroll in a Cohort", href: "#enrollment-form" }}
         secondaryAction={{ label: "View Subjects & Syllabus", href: "#courses" }}
         metaList={[
@@ -66,7 +66,7 @@ export default function EducationPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Our Educational Method"
-            title="The 4 Foundational Pillars of Every Session"
+            title="4 Pillars of Every Teaching Session"
             subtitle="How we guide students from initial confusion to exam-day mastery."
             align="left"
           />
@@ -238,19 +238,19 @@ export default function EducationPage() {
                 Icon: Users,
                 title: "Small Group In-Person",
                 tag: "Pokhara / In-Person Sessions",
-                desc: "Limited to small batches to ensure interactive discussions, personal notebook reviews, and continuous doubt resolution.",
+                desc: "Small batches for interactive discussions, personal notebook reviews, and continuous doubt resolution.",
               },
               {
                 Icon: Video,
                 title: "Interactive Live Online",
                 tag: "Digital Classroom",
-                desc: "Live interactive classes using high-resolution digital whiteboards, screen-shared financial schedules, and revision materials.",
+                desc: "Live classes with digital whiteboards, screen-shared financial schedules, and downloadable revision materials.",
               },
               {
                 Icon: Clock,
                 title: "1-on-1 Exam Intensive",
                 tag: "Targeted Remediation",
-                desc: "Fast-track customized coaching focused on specific problem chapters, past-paper answer writing, and step-marking optimization.",
+                desc: "Fast-track coaching focused on problem chapters, past-paper answer writing, and step-marking optimization.",
               },
             ].map(({ Icon, title, tag, desc }) => (
               <div
@@ -337,8 +337,8 @@ export default function EducationPage() {
           <div className="max-w-3xl mx-auto">
             <SectionHeading
               eyebrow="Cohort Enrollment"
-              title="Reserve Your Seat or Inquire for Upcoming Batches"
-              subtitle="Fill in your academic background and our team will get in touch with schedule details."
+              title="Inquire or Reserve Your Seat"
+              subtitle="Share your academic background and we'll be in touch with schedule details."
               align="center"
             />
             <ContactForm defaultTab="tuition" />

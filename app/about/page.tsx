@@ -37,7 +37,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Biography & Background"
         title="Commerce & Accounting Educator"
-        subtitle="Dedicated to concept-first education for school, +2, and undergraduate commerce students, backed by rigorous accounting knowledge."
+        subtitle="Concept-first education for Class 11/12 and undergraduate commerce students, backed by strong accounting expertise."
         primaryAction={{ label: "Contact Directly", href: "/contact" }}
         secondaryAction={{ label: "View Experience", href: "/experience" }}
         metaList={[
@@ -118,21 +118,21 @@ export default function AboutPage() {
                 style={{ color: "var(--color-fg-secondary)" }}
               >
                 <p>
-                  As an educator specializing in commerce and accountancy, my mission is to demystify complex financial subjects for school and college students. I help learners understand how statutory frameworks, double-entry systems, and commercial logic function in the real world—not merely on a chalkboard.
+                  My mission is to demystify complex financial subjects for school and college students — helping them understand how accounting systems and commercial logic work in the real world, not just on a chalkboard.
                 </p>
                 <p>
-                  Throughout my teaching journey, I observed that students are frequently taught to memorize steps, formulas, and formats for examination day. Without genuine conceptual understanding, students lose confidence whenever an exam question presents unfamiliar twists.
+                  Too often, students memorize formulas for exam day without genuine understanding. When an unfamiliar question appears, confidence collapses. I saw this pattern early in my teaching career and it shaped everything.
                 </p>
                 <p>
-                  This insight shaped my teaching philosophy: empowering secondary (+2) and undergraduate commerce students with a <strong>concept-first</strong> learning method, dedicated doubt clearance, and structured exam strategy so they build lasting confidence and achieve standout academic results.
+                  The result is a <strong>concept-first</strong> approach — combining dedicated doubt clearance, practical real-world examples, and structured exam strategy so students build lasting confidence and achieve standout results.
                 </p>
               </div>
 
               {/* Core Values */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-6 w-full">
                 {[
-                  { Icon: Shield, title: "Uncompromising Ethics", desc: "Adhering strictly to standard professional ethics, academic discipline, and complete confidentiality." },
-                  { Icon: HeartHandshake, title: "Personal Attention", desc: "Treating every student with dedicated personal attention, patience, and clear, supportive guidance." },
+                  { Icon: Shield, title: "Uncompromising Ethics", desc: "Strict professional ethics, academic discipline, and complete confidentiality in every engagement." },
+                  { Icon: HeartHandshake, title: "Personal Attention", desc: "Every student receives dedicated focus, patience, and clear supportive guidance throughout." },
                 ].map(({ Icon, title, desc }) => (
                   <div
                     key={title}
@@ -178,8 +178,8 @@ export default function AboutPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Academic & Professional Rigor"
-            title="Formal Credentials & Certifications"
-            subtitle="Verified qualifications that underpin every advisory service and academic session."
+            title="Credentials & Qualifications"
+            subtitle="Verified background underpinning every advisory and teaching engagement."
             align="center"
           />
 

@@ -14,8 +14,8 @@ export function DualPaths() {
       <div className="shell">
         <SectionHeading
           eyebrow="Two Core Disciplines"
-          title="Bridging Academic Rigor & Practical Accounting Insight"
-          subtitle="A student-centered approach to build deep conceptual clarity, backed by real-world accounting and financial experience."
+          title="Education & Professional Accounting Services"
+          subtitle="Concept-first student tuition alongside rigorous accounting and advisory practice."
           align="center"
         />
 
@@ -68,7 +68,7 @@ export function DualPaths() {
                   className="text-sm mt-3 leading-relaxed"
                   style={{ color: "var(--color-fg-secondary)" }}
                 >
-                  Specialized tuition programs designed to build rock-solid foundational understanding in commerce and accounting without rote memorization.
+                  Specialized tuition for commerce and accounting — building solid foundational understanding without rote memorization.
                 </p>
               </div>
 
@@ -148,7 +148,7 @@ export function DualPaths() {
                   className="text-sm mt-3 leading-relaxed"
                   style={{ color: "var(--color-dark-fg-muted)" }}
                 >
-                  Dependable corporate bookkeeping, direct &amp; indirect taxation, statutory compliance, audit support, and financial advisory rooted in strict ethical standards.
+                  Bookkeeping, tax compliance, audit support, and financial advisory — grounded in strict ethical standards.
                 </p>
               </div>
 

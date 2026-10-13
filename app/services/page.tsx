@@ -57,7 +57,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Accounting & Advisory Practice"
         title="Professional Financial & Advisory Services"
-        subtitle="Rigorous accounting compliance, strategic taxation guidance, and independent advisory tailored for growth-oriented enterprises and discerning individuals."
+        subtitle="Accounting compliance, strategic taxation guidance, and independent advisory for businesses and individuals."
         primaryAction={{ label: "Request Consultation", href: "#service-inquiry" }}
         secondaryAction={{ label: "Explore Service Scope", href: "#services-catalog" }}
         metaList={[
@@ -76,8 +76,8 @@ export default function ServicesPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Specialized Practice Areas"
-            title="Comprehensive Commercial & Statutory Support"
-            subtitle="Dependable solutions designed to safeguard compliance, streamline financial reporting, and provide commercial foresight."
+            title="Accounting, Tax & Advisory Services"
+            subtitle="Dependable solutions for compliance, financial reporting, and strategic commercial guidance."
             align="center"
           />
 
@@ -188,17 +188,17 @@ export default function ServicesPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Engagement Model"
-            title="A Structured, Transparent Approach to Advisory"
+            title="A Structured, Transparent Approach"
             subtitle="How we onboard and support your business from initial discussion to ongoing compliance."
             align="center"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { num: "01", title: "Discovery & Scope", desc: "Confidential meeting to assess your business structure, statutory timelines, and specific financial needs." },
-              { num: "02", title: "Diagnostic Review", desc: "Reviewing past accounts, filings, and reconciliations to identify potential exposure areas and efficiencies." },
-              { num: "03", title: "Execution & Filing", desc: "Meticulous preparation of statements, tax returns, and audit documentation in strict compliance with current laws." },
-              { num: "04", title: "Strategic Support", desc: "Ongoing advisory, periodic MIS updates, and proactive alerts regarding changes in fiscal legislation." },
+              { num: "01", title: "Discovery & Scope", desc: "Confidential meeting to assess your business structure, statutory timelines, and financial needs." },
+              { num: "02", title: "Diagnostic Review", desc: "Reviewing past accounts, filings, and reconciliations to identify exposure areas and efficiencies." },
+              { num: "03", title: "Execution & Filing", desc: "Preparation of statements, tax returns, and audit documentation in strict compliance with current laws." },
+              { num: "04", title: "Strategic Support", desc: "Ongoing advisory, periodic MIS updates, and proactive alerts on changes in fiscal legislation." },
             ].map(({ num, title, desc }) => (
               <div
                 key={num}
@@ -257,13 +257,13 @@ export default function ServicesPage() {
                 className="text-xl font-bold mt-1"
                 style={{ color: "var(--color-fg-light)" }}
               >
-                Upholding the Highest Professional Code of Ethics
+                Highest Professional Code of Ethics
               </h3>
               <p
                 className="text-sm mt-2 leading-relaxed"
                 style={{ color: "var(--color-dark-fg-muted)" }}
               >
-                All client engagements are conducted under strict non-disclosure obligations, objective integrity, professional competence, and adherence to standard accounting practices.
+                All client engagements are conducted under strict non-disclosure, objective integrity, and professional competence — in full adherence to standard accounting practices.
               </p>
             </div>
           </div>
@@ -278,7 +278,7 @@ export default function ServicesPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Client FAQ"
-            title="Frequently Asked Questions on Accounting & Advisory Services"
+            title="Common Questions on Accounting & Advisory"
             subtitle="Clear answers on our engagement structure, turnaround times, and statutory coverage."
             align="center"
           />
@@ -319,8 +319,8 @@ export default function ServicesPage() {
           <div className="max-w-3xl mx-auto">
             <SectionHeading
               eyebrow="Commercial Consultation"
-              title="Request a Professional Consultation"
-              subtitle="Outline your business requirements and we will arrange a confidential introductory call."
+              title="Request a Consultation"
+              subtitle="Outline your requirements and we'll arrange a confidential introductory call."
               align="center"
             />
             <ContactForm defaultTab="services" />

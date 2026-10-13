@@ -19,18 +19,17 @@ export function CtaBanner() {
 
       <div className="shell relative z-10">
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-          <span className="eyebrow-badge dark mb-3">Initiate a Conversation</span>
           <h2
             className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
             style={{ color: "var(--color-fg-light)" }}
           >
-            Ready to Build Academic Clarity and Stronger Results?
+            Ready to Build Clarity and Better Results?
           </h2>
           <p
             className="text-sm sm:text-base mt-4 max-w-xl leading-relaxed"
             style={{ color: "var(--color-dark-fg-muted)" }}
           >
-            Whether you are a student preparing for examinations or a parent seeking concept-first academic tuition, reach out directly to begin the conversation.
+            Whether you&rsquo;re a student preparing for exams or a parent seeking concept-first tuition, reach out to begin the conversation.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 mt-6 w-full sm:w-auto">

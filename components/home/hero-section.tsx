@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, GraduationCap, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, GraduationCap, CheckCircle2, Phone } from "lucide-react";
 import { profile } from "@/data/profile";
 
 export function HeroSection() {
@@ -72,18 +72,19 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-6 w-full sm:w-auto">
               <Link
                 href="/education"
-                className="btn-primary justify-center text-sm"
+                className="btn-secondary justify-center text-sm"
               >
                 <GraduationCap size={16} />
                 <span>Explore Tuition &amp; Subjects</span>
                 <ArrowUpRight size={15} />
               </Link>
-              <Link
-                href="/about"
-                className="btn-secondary justify-center text-sm"
+              <a
+                href={`tel:${profile.phoneTel}`}
+                className="btn-primary justify-center text-sm"
               >
-                <span>About Teaching Approach</span>
-              </Link>
+                <Phone size={16} />
+                <span>Call Now</span>
+              </a>
             </div>
 
             {/* Trust Badges */}

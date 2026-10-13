@@ -14,8 +14,8 @@ export function TeachingPhilosophy() {
       <div className="shell">
         <SectionHeading
           eyebrow="Teaching Philosophy"
-          title="Teaching for Long-Term Clarity, Not Short-Term Memorization"
-          subtitle="Commerce and accountancy are logical systems. When students grasp foundational principles, exam success naturally follows."
+          title="Built for Long-Term Understanding, Not Short-Term Memorization"
+          subtitle="Commerce and accountancy are logical systems. Grasp the principles and exam success follows naturally."
           align="left"
         />
 
@@ -101,7 +101,7 @@ export function TeachingPhilosophy() {
                 className="text-sm sm:text-base font-medium mt-1 leading-relaxed italic"
                 style={{ color: "var(--color-fg-light)" }}
               >
-                &ldquo;If a student can explain why a ledger entry is made from first principles, they can solve any variation examiners present.&rdquo;
+                &ldquo;If a student can explain why a ledger entry is made from first principles, they can solve any variation an examiner presents.&rdquo;
               </p>
             </div>
           </div>
