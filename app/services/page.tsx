@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
 import { Receipt, Calculator, ShieldCheck, Briefcase, Check, ArrowUpRight, Scale, Lock, HelpCircle } from "lucide-react";
 import { services, faqs } from "@/data/profile";
-import { pageSeo, generateServicesSchema, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { pageSeo, buildPageMetadata, generateServicesSchema, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactForm } from "@/components/contact-form";
 
-export const metadata: Metadata = {
-  title: pageSeo.services.title,
-  description: pageSeo.services.description,
-  keywords: pageSeo.services.keywords,
-  alternates: {
-    canonical: pageSeo.services.canonical,
-  },
-  openGraph: {
-    title: pageSeo.services.title,
-    description: pageSeo.services.description,
-    url: pageSeo.services.canonical,
-  },
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.services);
 
 const serviceIcons = {
   receipt: Receipt,
@@ -121,7 +109,7 @@ export default function ServicesPage() {
                       {svc.title}
                     </h3>
                     <p
-                      className="text-xs font-semibold mt-1"
+                      className="text-sm font-semibold mt-1"
                       style={{ color: "var(--color-gold)" }}
                     >
                       Ideal For: {svc.targetClients}
@@ -138,7 +126,7 @@ export default function ServicesPage() {
                       style={{ borderColor: "var(--color-surface-alt)" }}
                     >
                       <p
-                        className="text-[10px] font-bold uppercase tracking-wider mb-2.5"
+                        className="text-sm font-bold uppercase tracking-wider mb-2.5"
                         style={{ color: "var(--color-fg)" }}
                       >
                         Core Deliverables &amp; Scope:
@@ -211,14 +199,14 @@ export default function ServicesPage() {
                 >
                   {num}
                 </span>
-                <h4
+                <h3
                   className="text-sm font-bold mt-2"
                   style={{ color: "var(--color-fg)" }}
                 >
                   {title}
-                </h4>
+                </h3>
                 <p
-                  className="text-xs mt-2 leading-relaxed"
+                  className="text-sm mt-2 leading-relaxed"
                   style={{ color: "var(--color-fg-secondary)" }}
                 >
                   {desc}
@@ -248,7 +236,7 @@ export default function ServicesPage() {
             </div>
             <div>
               <span
-                className="text-[10px] font-bold uppercase tracking-widest"
+                className="text-xs font-bold uppercase tracking-widest"
                 style={{ color: "var(--color-dark-accent)" }}
               >
                 Confidentiality &amp; Professional Standards
@@ -290,15 +278,15 @@ export default function ServicesPage() {
                 className="rounded-lg border p-5"
                 style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
               >
-                <h4
+                <h3
                   className="text-sm font-bold flex items-start gap-2"
                   style={{ color: "var(--color-fg)" }}
                 >
                   <HelpCircle size={16} className="shrink-0 mt-0.5" style={{ color: "var(--color-gold)" }} />
                   <span>{faq.question}</span>
-                </h4>
+                </h3>
                 <p
-                  className="text-xs mt-2 pl-6 leading-relaxed"
+                  className="text-sm mt-2 pl-6 leading-relaxed"
                   style={{ color: "var(--color-fg-secondary)" }}
                 >
                   {faq.answer}

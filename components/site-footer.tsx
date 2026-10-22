@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { profile, services, educationOfferings } from "@/data/profile";
 
 // Compact footer nav — trimmed labels matching the header
@@ -31,30 +31,30 @@ export function SiteFooter() {
             <span className="eyebrow-badge dark mb-3">
               Commerce &amp; Accounting Educator · Tuition &amp; Classes
             </span>
-            <h2
+            <p
               className="text-xl sm:text-2xl font-bold tracking-tight mt-2 max-w-xl"
               style={{ color: "var(--color-fg-light)" }}
             >
               Elevating academic understanding. Building strong foundations for student success.
-            </h2>
+            </p>
             <p
-              className="mt-3 text-sm max-w-lg leading-relaxed"
+              className="mt-3 text-base max-w-lg leading-relaxed"
               style={{ color: "var(--color-dark-fg-muted)" }}
             >
-              Available for dedicated academic tuition cohorts, student guidance, and accounting consultations in Pokhara.
+              Available for tuition, student guidance, and accounting work in Pokhara.
             </p>
           </div>
           <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-2.5">
-            <Link href="/contact" className="btn-gold justify-center text-sm">
-              <span>Schedule a Consultation</span>
-              <ArrowUpRight size={15} />
+            <Link href="/contact?type=tuition" className="btn-gold justify-center text-sm">
+              <span>Enquire about tuition</span>
+              <ArrowUpRight size={15} aria-hidden="true" />
             </Link>
             <Link
-              href="/education"
+              href="/contact?type=services"
               className="btn-dark-secondary inline-flex items-center justify-center gap-2 rounded-[10px] text-sm font-semibold text-center"
               style={{ padding: "0.6rem 1.2rem" }}
             >
-              <span>Explore Tuition Programs</span>
+              <span>Discuss accounting work</span>
             </Link>
           </div>
         </div>
@@ -93,56 +93,58 @@ export function SiteFooter() {
               </div>
             </div>
             <p
-              className="text-xs leading-relaxed pr-3"
+              className="text-sm leading-relaxed pr-3"
               style={{ color: "var(--color-dark-fg-muted)" }}
             >
               {profile.summary}
             </p>
             <div
-              className="flex flex-col gap-2 text-xs"
+              className="flex flex-col gap-2 text-sm"
               style={{ color: "var(--color-dark-fg-muted)" }}
             >
               <div className="flex items-center gap-2">
-                <MapPin size={13} className="shrink-0" style={{ color: "var(--color-gold)" }} />
+                <MapPin size={14} className="shrink-0" style={{ color: "var(--color-dark-accent)" }} aria-hidden="true" />
                 <span>{profile.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail size={13} className="shrink-0" style={{ color: "var(--color-gold)" }} />
-                {profile.email ? (
+                <Phone size={14} className="shrink-0" style={{ color: "var(--color-dark-accent)" }} aria-hidden="true" />
+                <a
+                  href={`tel:${profile.phoneTel}`}
+                  className="py-1 transition-opacity hover:opacity-75"
+                  style={{ color: "var(--color-dark-fg-muted)" }}
+                >
+                  {profile.phone}
+                </a>
+              </div>
+              {profile.email && (
+                <div className="flex items-center gap-2">
+                  <Mail size={14} className="shrink-0" style={{ color: "var(--color-dark-accent)" }} aria-hidden="true" />
                   <a
                     href={`mailto:${profile.email}`}
-                    className="transition-opacity hover:opacity-75"
+                    className="py-1 transition-opacity hover:opacity-75"
                     style={{ color: "var(--color-dark-fg-muted)" }}
                   >
                     {profile.email}
                   </a>
-                ) : (
-                  <Link
-                    href="/contact"
-                    className="transition-opacity hover:opacity-75"
-                    style={{ color: "var(--color-dark-fg-muted)" }}
-                  >
-                    Direct Contact &amp; Inquiry
-                  </Link>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
 
           {/* Col 2: Education */}
           <div className="lg:col-span-3">
             <h3
-              className="text-[10px] font-bold uppercase tracking-widest mb-3.5"
+              className="text-xs font-bold uppercase tracking-widest mb-3.5"
               style={{ color: "var(--color-dark-accent)" }}
             >
               Tuition &amp; Education
             </h3>
-            <ul className="flex flex-col gap-2 text-xs" style={{ color: "var(--color-dark-fg-muted)" }}>
+            <ul className="flex flex-col gap-1 text-sm" style={{ color: "var(--color-dark-fg-muted)" }}>
               {educationOfferings.slice(0, 4).map((offering) => (
                 <li key={offering.id}>
                   <Link
                     href={`/education#${offering.id}`}
-                    className="transition-opacity hover:opacity-75 hover:underline"
+                    className="inline-block py-1.5 transition-opacity hover:opacity-75 hover:underline"
                     style={{ color: "var(--color-dark-fg-muted)" }}
                   >
                     {offering.title}
@@ -152,8 +154,8 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/education"
-                  className="font-medium hover:underline inline-flex items-center gap-1 mt-1"
-                  style={{ color: "var(--color-gold)" }}
+                  className="font-medium hover:underline inline-flex items-center gap-1 py-1.5"
+                  style={{ color: "var(--color-dark-accent)" }}
                 >
                   All Academic Offerings <span>→</span>
                 </Link>
@@ -164,17 +166,17 @@ export function SiteFooter() {
           {/* Col 3: Services */}
           <div className="lg:col-span-3">
             <h3
-              className="text-[10px] font-bold uppercase tracking-widest mb-3.5"
+              className="text-xs font-bold uppercase tracking-widest mb-3.5"
               style={{ color: "var(--color-dark-accent)" }}
             >
               Accounting Services
             </h3>
-            <ul className="flex flex-col gap-2 text-xs" style={{ color: "var(--color-dark-fg-muted)" }}>
+            <ul className="flex flex-col gap-1 text-sm" style={{ color: "var(--color-dark-fg-muted)" }}>
               {services.map((service) => (
                 <li key={service.id}>
                   <Link
                     href={`/services#${service.id}`}
-                    className="transition-opacity hover:opacity-75 hover:underline"
+                    className="inline-block py-1.5 transition-opacity hover:opacity-75 hover:underline"
                     style={{ color: "var(--color-dark-fg-muted)" }}
                   >
                     {service.title}
@@ -184,8 +186,8 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/services"
-                  className="font-medium hover:underline inline-flex items-center gap-1 mt-1"
-                  style={{ color: "var(--color-gold)" }}
+                  className="font-medium hover:underline inline-flex items-center gap-1 py-1.5"
+                  style={{ color: "var(--color-dark-accent)" }}
                 >
                   All Services &amp; Scope <span>→</span>
                 </Link>
@@ -196,17 +198,17 @@ export function SiteFooter() {
           {/* Col 4: Navigation */}
           <div className="lg:col-span-2">
             <h3
-              className="text-[10px] font-bold uppercase tracking-widest mb-3.5"
+              className="text-xs font-bold uppercase tracking-widest mb-3.5"
               style={{ color: "var(--color-dark-accent)" }}
             >
               Navigation
             </h3>
-            <ul className="flex flex-col gap-2 text-xs" style={{ color: "var(--color-dark-fg-muted)" }}>
+            <ul className="flex flex-col gap-1 text-sm" style={{ color: "var(--color-dark-fg-muted)" }}>
               {footerNav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="transition-opacity hover:opacity-75 hover:underline"
+                    className="inline-block py-1.5 transition-opacity hover:opacity-75 hover:underline"
                     style={{ color: "var(--color-dark-fg-muted)" }}
                   >
                     {item.label}
@@ -219,23 +221,23 @@ export function SiteFooter() {
 
         {/* Bottom Bar */}
         <div
-          className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs"
-          style={{ color: "color-mix(in srgb, var(--color-dark-fg-muted) 80%, transparent)" }}
+          className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm"
+          style={{ color: "var(--color-dark-fg-muted)" }}
         >
           <p>
             © {new Date().getFullYear()} {profile.name}. All rights reserved. Dedicated to educational excellence and professional integrity.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/about" className="transition-opacity hover:opacity-75" style={{ color: "var(--color-dark-fg-muted)" }}>
+            <Link href="/about" className="py-1.5 transition-opacity hover:opacity-75" style={{ color: "var(--color-dark-fg-muted)" }}>
               About
             </Link>
-            <Link href="/contact" className="transition-opacity hover:opacity-75" style={{ color: "var(--color-dark-fg-muted)" }}>
+            <Link href="/contact" className="py-1.5 transition-opacity hover:opacity-75" style={{ color: "var(--color-dark-fg-muted)" }}>
               Contact
             </Link>
             <a
               href="#top"
-              className="font-medium hover:underline"
-              style={{ color: "var(--color-gold)" }}
+              className="py-1.5 font-medium hover:underline"
+              style={{ color: "var(--color-dark-accent)" }}
             >
               Back to Top ↑
             </a>

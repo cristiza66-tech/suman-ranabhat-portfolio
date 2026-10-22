@@ -1,15 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Home } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (
     <div className="min-h-[70vh] flex items-center justify-center py-20 px-4">
       <div className="max-w-md w-full text-center">
         <span className="eyebrow-badge mb-4">404 Error</span>
-        <h1 className="text-4xl font-extrabold text-[#12161A] tracking-tight">
+        <h1 className="text-4xl font-extrabold text-primary tracking-tight">
           Page Not Found
         </h1>
-        <p className="mt-4 text-[#475467] text-sm leading-relaxed">
+        <p className="mt-4 text-secondary text-base leading-relaxed">
           The page you are looking for does not exist or has been moved. Return to
           the homepage to explore tuition offerings and contact details.
         </p>

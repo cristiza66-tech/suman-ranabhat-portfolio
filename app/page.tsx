@@ -65,7 +65,7 @@ export default function HomePage() {
                 }}
               >
                 <p
-                  className="text-[10px] font-bold uppercase tracking-widest mb-2"
+                  className="text-sm font-bold uppercase tracking-widest mb-2"
                   style={{ color: "var(--color-gold)" }}
                 >
                   Core Guiding Principle
@@ -145,7 +145,7 @@ export default function HomePage() {
                 <div>
                   <div className="mb-3">
                     <span
-                      className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded"
+                      className="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded"
                       style={{
                         backgroundColor: "color-mix(in srgb, var(--color-gold-soft) 60%, transparent)",
                         color: "var(--color-accent)",
@@ -155,7 +155,7 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p
-                    className="text-xs leading-relaxed italic"
+                    className="text-sm leading-relaxed italic"
                     style={{ color: "var(--color-fg)" }}
                   >
                     &ldquo;{t.quote}&rdquo;
@@ -167,20 +167,20 @@ export default function HomePage() {
                   style={{ borderColor: "var(--color-surface-alt)" }}
                 >
                   <p
-                    className="text-xs font-bold"
+                    className="text-sm font-bold"
                     style={{ color: "var(--color-fg)" }}
                   >
                     {t.author}
                   </p>
                   <p
-                    className="text-xs"
+                    className="text-sm"
                     style={{ color: "var(--color-fg-muted)" }}
                   >
                     {t.designation}
                   </p>
                   {t.context && (
                     <p
-                      className="text-xs font-medium mt-0.5"
+                      className="text-sm font-medium mt-0.5"
                       style={{ color: "var(--color-gold)" }}
                     >
                       {t.context}

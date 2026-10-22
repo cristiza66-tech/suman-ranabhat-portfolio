@@ -2,23 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Award, Check, ArrowRight, ShieldCheck } from "lucide-react";
 import { experienceTimeline, qualifications } from "@/data/profile";
-import { pageSeo, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { pageSeo, buildPageMetadata, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-export const metadata: Metadata = {
-  title: pageSeo.experience.title,
-  description: pageSeo.experience.description,
-  keywords: pageSeo.experience.keywords,
-  alternates: {
-    canonical: pageSeo.experience.canonical,
-  },
-  openGraph: {
-    title: pageSeo.experience.title,
-    description: pageSeo.experience.description,
-    url: pageSeo.experience.canonical,
-  },
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.experience);
 
 export default function ExperiencePage() {
   const breadcrumbJsonLd = generateBreadcrumbSchema([
@@ -101,7 +89,7 @@ export default function ExperiencePage() {
                             {item.period}
                           </span>
                           <span
-                            className="text-[10px] font-bold uppercase tracking-wider"
+                            className="text-xs font-bold uppercase tracking-wider"
                             style={{ color: "var(--color-fg-muted)" }}
                           >
                             {item.type}
@@ -117,7 +105,7 @@ export default function ExperiencePage() {
 
                         {item.organization && (
                           <p
-                            className="text-xs font-semibold mt-0.5"
+                            className="text-sm font-semibold mt-0.5"
                             style={{ color: "var(--color-gold)" }}
                           >
                             {item.organization}
@@ -125,7 +113,7 @@ export default function ExperiencePage() {
                         )}
 
                         <p
-                          className="text-xs mt-2.5 leading-relaxed"
+                          className="text-sm mt-2.5 leading-relaxed"
                           style={{ color: "var(--color-fg-secondary)" }}
                         >
                           {item.description}
@@ -189,7 +177,7 @@ export default function ExperiencePage() {
                   <Award size={20} />
                 </div>
                 <span
-                  className="text-[10px] font-bold uppercase tracking-wider"
+                  className="text-xs font-bold uppercase tracking-wider"
                   style={{ color: "var(--color-gold)" }}
                 >
                   {q.category}
@@ -201,14 +189,14 @@ export default function ExperiencePage() {
                   {q.title}
                 </h3>
                 <p
-                  className="text-xs font-medium mt-0.5"
+                  className="text-sm font-medium mt-0.5"
                   style={{ color: "var(--color-fg-muted)" }}
                 >
                   {q.body}
                 </p>
                 {q.description && (
                   <p
-                    className="text-xs mt-3 leading-relaxed"
+                    className="text-sm mt-3 leading-relaxed"
                     style={{ color: "var(--color-fg-secondary)" }}
                   >
                     {q.description}

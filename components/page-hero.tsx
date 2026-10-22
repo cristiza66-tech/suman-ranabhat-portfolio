@@ -66,7 +66,7 @@ export function PageHero({
               {metaList.map((item, idx) => (
                 <div key={idx} className="flex flex-col">
                   <span
-                    className="text-[10px] uppercase tracking-wider font-semibold"
+                    className="text-xs uppercase tracking-wider font-semibold"
                     style={{ color: "var(--color-fg-muted)" }}
                   >
                     {item.label}

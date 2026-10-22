@@ -60,7 +60,7 @@ export function SiteHeader() {
               {profile.name}
             </span>
             <span
-              className="text-[10px] font-medium tracking-wide"
+              className="text-xs font-medium tracking-wide"
               style={{ color: "var(--color-fg-secondary)" }}
             >
               Commerce &amp; Accounting Educator
@@ -83,7 +83,8 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                aria-current={isActive ? "page" : undefined}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                   isActive ? "shadow-sm" : "hover:opacity-80"
                 }`}
                 style={
@@ -118,7 +119,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 rounded-lg transition-colors focus:outline-none"
+          className="md:hidden w-11 h-11 flex items-center justify-center rounded-lg transition-colors"
           style={{
             border: "1px solid var(--color-border)",
             backgroundColor: "var(--color-surface)",
@@ -150,29 +151,12 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${isActive ? "font-semibold" : ""}`}
-                  style={
+                  aria-current={isActive ? "page" : undefined}
+                  className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                     isActive
-                      ? {
-                          backgroundColor: "var(--color-accent)",
-                          color: "var(--color-accent-fg)",
-                        }
-                      : {
-                          color: "var(--color-fg-secondary)",
-                        }
-                  }
-                  onMouseEnter={(e) => {
-                    if (!isActive) {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-surface-alt)";
-                      (e.currentTarget as HTMLElement).style.color = "var(--color-fg)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isActive) {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "";
-                      (e.currentTarget as HTMLElement).style.color = "var(--color-fg-secondary)";
-                    }
-                  }}
+                      ? "font-semibold bg-navy text-(--color-accent-fg)"
+                      : "text-secondary hover:bg-surface-alt hover:text-primary"
+                  }`}
                 >
                   {item.label}
                 </Link>

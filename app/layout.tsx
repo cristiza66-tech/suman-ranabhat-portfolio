@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { profile } from "@/data/profile";
-import { siteConfig, pageSeo, generatePersonSchema, safeJsonLd } from "@/data/seo";
+import { siteConfig, pageSeo, baseOpenGraph, baseTwitter, generatePersonSchema, safeJsonLd } from "@/data/seo";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
@@ -38,26 +38,15 @@ export const metadata: Metadata = {
     canonical: siteConfig.siteUrl,
   },
   openGraph: {
-    type: "website",
-    locale: siteConfig.locale,
+    ...baseOpenGraph,
     url: siteConfig.siteUrl,
     title: pageSeo.home.title,
     description: pageSeo.home.description,
-    siteName: siteConfig.siteName,
-    images: [
-      {
-        url: siteConfig.defaultOgImage,
-        width: 600,
-        height: 750,
-        alt: `${profile.name} - Commerce & Accounting Educator in Pokhara, Nepal`,
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
+    ...baseTwitter,
     title: pageSeo.home.title,
     description: pageSeo.home.description,
-    images: [siteConfig.defaultOgImage],
   },
   robots: {
     index: true,
@@ -93,8 +82,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <SiteHeader />
-        <main className="flex-1 w-full">{children}</main>
+        <main id="main" tabIndex={-1} className="flex-1 w-full focus:outline-none">
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>

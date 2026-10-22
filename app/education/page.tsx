@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
 import { Check, HelpCircle, ArrowUpRight, GraduationCap, Users, Video, Clock } from "lucide-react";
 import { educationOfferings, teachingPrinciples, faqs } from "@/data/profile";
-import { pageSeo, generateCourseListSchema, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { pageSeo, buildPageMetadata, generateCourseListSchema, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactForm } from "@/components/contact-form";
 
-export const metadata: Metadata = {
-  title: pageSeo.education.title,
-  description: pageSeo.education.description,
-  keywords: pageSeo.education.keywords,
-  alternates: {
-    canonical: pageSeo.education.canonical,
-  },
-  openGraph: {
-    title: pageSeo.education.title,
-    description: pageSeo.education.description,
-    url: pageSeo.education.canonical,
-  },
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.education);
 
 export default function EducationPage() {
   const educationFaqs = faqs.filter(
@@ -91,13 +79,13 @@ export default function EducationPage() {
                   {tp.title}
                 </h3>
                 <p
-                  className="text-[10px] font-semibold mt-0.5"
+                  className="text-sm font-semibold mt-0.5"
                   style={{ color: "var(--color-gold)" }}
                 >
                   {tp.tagline}
                 </p>
                 <p
-                  className="text-xs mt-2.5 leading-relaxed"
+                  className="text-sm mt-2.5 leading-relaxed"
                   style={{ color: "var(--color-fg-secondary)" }}
                 >
                   {tp.description}
@@ -157,7 +145,7 @@ export default function EducationPage() {
                     {course.title}
                   </h3>
                   <p
-                    className="text-xs font-medium mt-1"
+                    className="text-sm font-medium mt-1"
                     style={{ color: "var(--color-fg-muted)" }}
                   >
                     Target: {course.targetAudience}
@@ -174,7 +162,7 @@ export default function EducationPage() {
                     style={{ borderColor: "var(--color-surface-alt)" }}
                   >
                     <p
-                      className="text-[10px] font-bold uppercase tracking-wider mb-2.5"
+                      className="text-sm font-bold uppercase tracking-wider mb-2.5"
                       style={{ color: "var(--color-fg)" }}
                     >
                       Key Learning Highlights:
@@ -271,13 +259,13 @@ export default function EducationPage() {
                   {title}
                 </h3>
                 <p
-                  className="text-[10px] font-semibold mt-0.5"
+                  className="text-sm font-semibold mt-0.5"
                   style={{ color: "var(--color-gold)" }}
                 >
                   {tag}
                 </p>
                 <p
-                  className="text-xs mt-2.5 leading-relaxed"
+                  className="text-sm mt-2.5 leading-relaxed"
                   style={{ color: "var(--color-fg-secondary)" }}
                 >
                   {desc}
@@ -308,15 +296,15 @@ export default function EducationPage() {
                 className="rounded-lg border p-5"
                 style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
               >
-                <h4
+                <h3
                   className="text-sm font-bold flex items-start gap-2"
                   style={{ color: "var(--color-fg)" }}
                 >
                   <HelpCircle size={16} className="shrink-0 mt-0.5" style={{ color: "var(--color-gold)" }} />
                   <span>{faq.question}</span>
-                </h4>
+                </h3>
                 <p
-                  className="text-xs mt-2 pl-6 leading-relaxed"
+                  className="text-sm mt-2 pl-6 leading-relaxed"
                   style={{ color: "var(--color-fg-secondary)" }}
                 >
                   {faq.answer}

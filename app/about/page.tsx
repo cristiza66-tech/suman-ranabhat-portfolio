@@ -3,24 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Award, Shield, HeartHandshake } from "lucide-react";
 import { profile, qualifications } from "@/data/profile";
-import { pageSeo, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { pageSeo, buildPageMetadata, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/home/cta-banner";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-export const metadata: Metadata = {
-  title: pageSeo.about.title,
-  description: pageSeo.about.description,
-  keywords: pageSeo.about.keywords,
-  alternates: {
-    canonical: pageSeo.about.canonical,
-  },
-  openGraph: {
-    title: pageSeo.about.title,
-    description: pageSeo.about.description,
-    url: pageSeo.about.canonical,
-  },
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.about);
 
 export default function AboutPage() {
   const breadcrumbJsonLd = generateBreadcrumbSchema([
@@ -75,7 +63,7 @@ export default function AboutPage() {
                 style={{ backgroundColor: "var(--color-bg)", borderColor: "var(--color-border)" }}
               >
                 <h3
-                  className="text-[10px] font-bold uppercase tracking-widest mb-3"
+                  className="text-xs font-bold uppercase tracking-widest mb-3"
                   style={{ color: "var(--color-gold)" }}
                 >
                   Summary Coordinates
@@ -147,7 +135,7 @@ export default function AboutPage() {
                       <span>{title}</span>
                     </div>
                     <p
-                      className="text-xs mt-2 leading-relaxed"
+                      className="text-sm mt-2 leading-relaxed"
                       style={{ color: "var(--color-fg-muted)" }}
                     >
                       {desc}
@@ -197,7 +185,7 @@ export default function AboutPage() {
                   <Award size={18} />
                 </div>
                 <span
-                  className="text-[10px] font-bold uppercase tracking-wider"
+                  className="text-xs font-bold uppercase tracking-wider"
                   style={{ color: "var(--color-gold)" }}
                 >
                   {q.category}
@@ -209,14 +197,14 @@ export default function AboutPage() {
                   {q.title}
                 </h3>
                 <p
-                  className="text-xs mt-0.5 font-medium"
+                  className="text-sm mt-0.5 font-medium"
                   style={{ color: "var(--color-fg-muted)" }}
                 >
                   {q.body}
                 </p>
                 {q.description && (
                   <p
-                    className="text-xs mt-2.5 leading-relaxed"
+                    className="text-sm mt-2.5 leading-relaxed"
                     style={{ color: "var(--color-fg-secondary)" }}
                   >
                     {q.description}

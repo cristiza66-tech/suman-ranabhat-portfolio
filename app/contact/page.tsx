@@ -1,23 +1,12 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Mail, Phone, MapPin, MessageSquare, ShieldCheck } from "lucide-react";
 import { profile, faqs } from "@/data/profile";
-import { pageSeo, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
-import { ContactForm } from "@/components/contact-form";
+import { pageSeo, buildPageMetadata, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { ContactForm, ContactFormFromQuery } from "@/components/contact-form";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-export const metadata: Metadata = {
-  title: pageSeo.contact.title,
-  description: pageSeo.contact.description,
-  keywords: pageSeo.contact.keywords,
-  alternates: {
-    canonical: pageSeo.contact.canonical,
-  },
-  openGraph: {
-    title: pageSeo.contact.title,
-    description: pageSeo.contact.description,
-    url: pageSeo.contact.canonical,
-  },
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.contact);
 
 export default function ContactPage() {
   const faqJsonLd = generateFaqSchema(faqs);
@@ -55,10 +44,10 @@ export default function ContactPage() {
                   className="text-xl font-bold mt-1"
                   style={{ color: "var(--color-fg)" }}
                 >
-                  {profile.name}
+                  Contact {profile.name}
                 </h1>
                 <p
-                  className="text-xs font-semibold mt-0.5"
+                  className="text-sm font-semibold mt-0.5"
                   style={{ color: "var(--color-gold)" }}
                 >
                   {profile.role}
@@ -130,7 +119,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <span
-                          className="text-[10px] uppercase font-bold tracking-wider"
+                          className="text-xs uppercase font-bold tracking-wider"
                           style={{ color: "var(--color-fg-muted)" }}
                         >
                           {label}
@@ -168,12 +157,12 @@ export default function ContactPage() {
               >
                 <div className="flex items-center gap-2.5">
                   <ShieldCheck size={18} style={{ color: "var(--color-gold)" }} />
-                  <h4 className="text-sm font-bold" style={{ color: "var(--color-fg-light)" }}>
+                  <h2 className="text-sm font-bold" style={{ color: "var(--color-fg-light)" }}>
                     Confidentiality Guarantee
-                  </h4>
+                  </h2>
                 </div>
                 <p
-                  className="text-xs mt-2 leading-relaxed"
+                  className="text-sm mt-2 leading-relaxed"
                   style={{ color: "var(--color-dark-fg-muted)" }}
                 >
                   All submitted business data, academic records, and inquiries are strictly guarded under professional non-disclosure practices.
@@ -183,7 +172,9 @@ export default function ContactPage() {
 
             {/* Right Column: Dual Form */}
             <div className="lg:col-span-7">
-              <ContactForm defaultTab="tuition" />
+              <Suspense fallback={<ContactForm defaultTab="tuition" />}>
+                <ContactFormFromQuery defaultTab="tuition" />
+              </Suspense>
             </div>
           </div>
         </div>
@@ -209,14 +200,14 @@ export default function ContactPage() {
                 className="rounded-lg border p-5"
                 style={{ backgroundColor: "var(--color-bg)", borderColor: "var(--color-border)" }}
               >
-                <h4
-                  className="text-sm font-bold"
+                <h3
+                  className="text-base font-bold"
                   style={{ color: "var(--color-fg)" }}
                 >
                   {faq.question}
-                </h4>
+                </h3>
                 <p
-                  className="text-xs mt-2 leading-relaxed"
+                  className="text-sm mt-2 leading-relaxed"
                   style={{ color: "var(--color-fg-secondary)" }}
                 >
                   {faq.answer}

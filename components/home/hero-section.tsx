@@ -153,7 +153,7 @@ export function HeroSection() {
                     style={{ color: "var(--color-gold)" }}
                   />
                   <span
-                    className="text-[10px] font-bold tracking-wider uppercase"
+                    className="text-xs font-bold tracking-wider uppercase"
                     style={{ color: "var(--color-fg-light)" }}
                   >
                     Commerce &amp; Accounting Educator
@@ -171,7 +171,7 @@ export function HeroSection() {
                   <div className="flex items-center justify-between">
                     <div>
                       <p
-                        className="text-[10px] font-bold uppercase tracking-wider"
+                        className="text-sm font-bold uppercase tracking-wider"
                         style={{ color: "var(--color-dark-accent)" }}
                       >
                         Commerce &amp; Accounting Tuition

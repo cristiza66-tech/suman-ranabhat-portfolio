@@ -22,10 +22,10 @@ export default function Error({
     <div className="min-h-[70vh] flex items-center justify-center py-20 px-4">
       <div className="max-w-md w-full text-center">
         <span className="eyebrow-badge mb-4">Application Notice</span>
-        <h1 className="text-3xl font-extrabold text-[#12161A] tracking-tight">
+        <h1 className="text-3xl font-extrabold text-primary tracking-tight">
           Something went wrong
         </h1>
-        <p className="mt-4 text-[#475467] text-sm leading-relaxed">
+        <p className="mt-4 text-secondary text-base leading-relaxed">
           An unexpected issue occurred while rendering this page. Please try refreshing or return to the homepage.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">

@@ -106,14 +106,14 @@ export function CredentialsOverview() {
                       {q.title}
                     </h3>
                     <p
-                      className="text-xs font-medium mt-0.5"
+                      className="text-sm font-medium mt-0.5"
                       style={{ color: "var(--color-fg-secondary)" }}
                     >
                       {q.body}
                     </p>
                     {q.description && (
                       <p
-                        className="text-xs mt-1.5 leading-relaxed max-w-xl"
+                        className="text-sm mt-1.5 leading-relaxed max-w-xl"
                         style={{ color: "var(--color-fg-muted)" }}
                       >
                         {q.description}

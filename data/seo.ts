@@ -3,10 +3,13 @@
  * Suman Ranabhat — Commerce & Accounting Educator (Pokhara, Nepal)
  */
 
+import type { Metadata } from "next";
+import { profile } from "@/data/profile";
+
 export const siteConfig = {
-  siteName: "Suman Ranabhat",
-  personName: "Suman Ranabhat",
-  jobTitle: "Commerce & Accounting Educator",
+  siteName: profile.name,
+  personName: profile.name,
+  jobTitle: profile.title,
   siteUrl: (process.env.NEXT_PUBLIC_SITE_URL || "https://sumanranabhat.com").replace(/\/$/, ""),
   locale: "en_US",
   location: {
@@ -17,16 +20,50 @@ export const siteConfig = {
     addressString: "Pokhara, Gandaki Province, Nepal",
   },
   contact: {
-    phone: "+977 9805864812",
-    telephone: "+9779805864812",
-    whatsapp: "+9779805864812",
-    email: "",
+    phone: profile.phone,
+    telephone: profile.phoneTel,
+    whatsapp: profile.phoneTel,
+    email: profile.email,
   },
-  social: [
-    "https://wa.me/9779805864812",
-  ],
+  social: [profile.whatsappUrl],
   defaultOgImage: "/images/suman-ranabhat.png",
 } as const;
+
+/**
+ * Shared Open Graph / Twitter fields. Metadata objects merge shallowly,
+ * so every page must spread these into its own `openGraph` / `twitter`
+ * or it loses the image, site name and type.
+ */
+export const baseOpenGraph = {
+  type: "website",
+  locale: siteConfig.locale,
+  siteName: siteConfig.siteName,
+  images: [
+    {
+      url: siteConfig.defaultOgImage,
+      width: 768,
+      height: 1024,
+      alt: `${profile.name} - ${profile.title} in Pokhara, Nepal`,
+    },
+  ],
+} satisfies Metadata["openGraph"];
+
+export const baseTwitter = {
+  card: "summary_large_image",
+  images: [siteConfig.defaultOgImage],
+} satisfies Metadata["twitter"];
+
+/** Page-level metadata with title, description, canonical, OG and Twitter set consistently. */
+export function buildPageMetadata(page: { title: string; description: string; keywords: string[]; canonical: string }): Metadata {
+  return {
+    title: page.title,
+    description: page.description,
+    keywords: page.keywords,
+    alternates: { canonical: page.canonical },
+    openGraph: { ...baseOpenGraph, title: page.title, description: page.description, url: page.canonical },
+    twitter: { ...baseTwitter, title: page.title, description: page.description },
+  };
+}
 
 export const defaultKeywords = [
   "Suman Ranabhat",
@@ -58,7 +95,7 @@ export const pageSeo = {
     canonical: `${siteConfig.siteUrl}/`,
   },
   about: {
-    title: "About Suman Ranabhat | Commerce & Accounting Educator, Pokhara",
+    title: "About – Commerce & Accounting Educator in Pokhara",
     description:
       "Suman Ranabhat is a dedicated Commerce & Accounting Educator based in Pokhara, Nepal. Concept-first tuition for school and college students, with personal attention and structured exam guidance.",
     keywords: [
@@ -70,7 +107,7 @@ export const pageSeo = {
     canonical: `${siteConfig.siteUrl}/about`,
   },
   education: {
-    title: "Commerce & Accounting Tuition Classes in Pokhara | Suman Ranabhat",
+    title: "Commerce & Accounting Tuition Classes in Pokhara",
     description:
       "Commerce and accounting tuition in Pokhara for Class 11, Class 12, BBS, and BBA students. Concept-first teaching by Suman Ranabhat covering financial accounting, costing, and taxation.",
     keywords: [
@@ -86,7 +123,7 @@ export const pageSeo = {
     canonical: `${siteConfig.siteUrl}/education`,
   },
   services: {
-    title: "Accounting & Advisory Services in Pokhara | Suman Ranabhat",
+    title: "Accounting & Advisory Services in Pokhara",
     description:
       "Professional accounting, bookkeeping, tax advisory, and financial consulting services in Pokhara by Commerce & Accounting Educator Suman Ranabhat.",
     keywords: [
@@ -99,7 +136,7 @@ export const pageSeo = {
     canonical: `${siteConfig.siteUrl}/services`,
   },
   experience: {
-    title: "Teaching Experience | Suman Ranabhat — Commerce & Accounting Educator",
+    title: "Teaching & Accounting Experience",
     description:
       "Suman Ranabhat's teaching journey, accounting training background, and student academic milestones in Pokhara, Nepal.",
     keywords: [
@@ -110,7 +147,7 @@ export const pageSeo = {
     canonical: `${siteConfig.siteUrl}/experience`,
   },
   contact: {
-    title: "Contact for Tuition & Classes | Suman Ranabhat, Pokhara",
+    title: "Contact for Tuition & Accounting in Pokhara",
     description:
       "Contact Commerce & Accounting Educator Suman Ranabhat in Pokhara for tuition enrollment, 1-on-1 guidance, or accounting consultation. Reach via phone or WhatsApp.",
     keywords: [
@@ -183,7 +220,7 @@ export function generateCourseListSchema(courses: Array<{ title: string; descrip
             addressCountry: siteConfig.location.countryCode,
           },
         },
-        educationalCredentialAwarded: c.level,
+        educationalLevel: c.level,
         audience: {
           "@type": "Audience",
           audienceType: c.targetAudience,

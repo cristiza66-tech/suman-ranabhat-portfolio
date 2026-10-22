@@ -29,7 +29,7 @@ export function CtaBanner() {
             className="text-sm sm:text-base mt-4 max-w-xl leading-relaxed"
             style={{ color: "var(--color-dark-fg-muted)" }}
           >
-            Whether you&rsquo;re a student preparing for exams or a parent seeking concept-first tuition, reach out to begin the conversation.
+            Whether you&rsquo;re a student preparing for exams, a parent looking for tuition, or a business that needs accounting help, reach out to begin the conversation.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 mt-6 w-full sm:w-auto">
@@ -37,22 +37,22 @@ export function CtaBanner() {
               href="/contact?type=tuition"
               className="btn-gold w-full sm:w-auto justify-center font-semibold"
             >
-              <GraduationCap size={16} />
-              <span>Enroll in Tuition Cohort</span>
-              <ArrowUpRight size={15} />
+              <GraduationCap size={16} aria-hidden="true" />
+              <span>Enquire about tuition</span>
+              <ArrowUpRight size={15} aria-hidden="true" />
             </Link>
             <Link
-              href="/contact"
+              href="/contact?type=services"
               className="btn-dark-secondary inline-flex items-center justify-center gap-2 rounded-[10px] text-sm font-semibold w-full sm:w-auto text-center"
               style={{ padding: "0.6rem 1.2rem" }}
             >
-              <span>Schedule Academic Consultation</span>
-              <ArrowUpRight size={15} />
+              <span>Discuss accounting work</span>
+              <ArrowUpRight size={15} aria-hidden="true" />
             </Link>
           </div>
 
           <div
-            className="mt-6 text-xs flex items-center gap-2"
+            className="mt-6 text-sm flex flex-wrap items-center justify-center gap-2"
             style={{ color: "var(--color-dark-accent)" }}
           >
             <span>Direct WhatsApp &amp; Inquiries:</span>

@@ -59,7 +59,7 @@ export function DualPaths() {
                   Education &amp; Tuition
                 </h3>
                 <p
-                  className="text-xs font-semibold mt-1"
+                  className="text-sm font-semibold mt-1"
                   style={{ color: "var(--color-gold)" }}
                 >
                   Learn with clarity. Build with confidence.
@@ -139,7 +139,7 @@ export function DualPaths() {
                   Accounting &amp; Advisory Services
                 </h3>
                 <p
-                  className="text-xs font-semibold mt-1"
+                  className="text-sm font-semibold mt-1"
                   style={{ color: "var(--color-dark-accent)" }}
                 >
                   Practical financial &amp; taxation guidance.

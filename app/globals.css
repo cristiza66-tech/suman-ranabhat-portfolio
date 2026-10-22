@@ -37,7 +37,7 @@
   --color-dark-surface: #101E30;
   --color-dark-border:  #1C2E44;
   --color-dark-fg:      #EEF3F8;
-  --color-dark-fg-muted:#7A9AB5;
+  --color-dark-fg-muted:#A3BCD3; /* ≥5.8:1 on --color-accent and darker */
   --color-dark-accent:  #9CC2E0;
 
   /* Radius */
@@ -212,18 +212,36 @@ body {
   padding: 0.6rem 1.2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-gold-fg);
-  background-color: var(--color-gold);
-  border: 1px solid var(--color-gold);
+  /* White on --color-gold-hover is 7.2:1 (dark text on --color-gold was 3.2:1) */
+  color: #FFFFFF;
+  background-color: var(--color-gold-hover);
+  border: 1px solid var(--color-gold-hover);
   border-radius: var(--radius-md);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .btn-gold:hover {
-  background-color: var(--color-gold-hover);
-  border-color: var(--color-gold-hover);
-  color: var(--color-fg-light);
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+/* Skip link: hidden until focused */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent);
+  color: var(--color-accent-fg);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
 }
 
 /* ============================================================
