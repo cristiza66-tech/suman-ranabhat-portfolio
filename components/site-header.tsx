@@ -4,28 +4,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { profile } from "@/data/profile";
-
-// Compact nav items — Home removed (logo links home); long labels trimmed
-const navItems = [
-  { label: "About", href: "/about" },
-  { label: "Subjects", href: "/education" },
-  { label: "Services", href: "/services" },
-  { label: "Experience", href: "/experience" },
-  { label: "Contact", href: "/contact" },
-];
+import { profile, navigation as navItems } from "@/data/profile";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  // Escape closes the mobile menu; only listen while it is open.
   useEffect(() => {
+    if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [isOpen]);
 
   const [prevPathname, setPrevPathname] = useState(pathname);
   if (prevPathname !== pathname) {
@@ -63,7 +56,7 @@ export function SiteHeader() {
               className="text-xs font-medium tracking-wide"
               style={{ color: "var(--color-fg-secondary)" }}
             >
-              Commerce &amp; Accounting Educator
+              {profile.title}
             </span>
           </div>
         </Link>
@@ -166,7 +159,7 @@ export function SiteHeader() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="btn-primary w-full justify-center text-sm"
+                className="btn-primary w-full text-sm"
               >
                 <span>Get in Touch</span>
                 <ArrowUpRight size={15} />

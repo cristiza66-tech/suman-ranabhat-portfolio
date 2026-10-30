@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Award, Shield, HeartHandshake } from "lucide-react";
 import { profile, qualifications } from "@/data/profile";
-import { pageSeo, buildPageMetadata, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { pageSeo, buildPageMetadata, generateBreadcrumbSchema, siteConfig } from "@/data/seo";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/home/cta-banner";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -18,18 +19,15 @@ export default function AboutPage() {
 
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
-      />
+      <JsonLd data={breadcrumbJsonLd} />
       <PageHero
         eyebrow="Biography & Background"
-        title="Commerce & Accounting Educator"
+        title={profile.title}
         subtitle="Concept-first education for Class 11/12 and undergraduate commerce students, backed by strong accounting expertise."
         primaryAction={{ label: "Contact Directly", href: "/contact" }}
         secondaryAction={{ label: "View Experience", href: "/experience" }}
         metaList={[
-          { label: "Primary Role", value: "Commerce & Accounting Educator" },
+          { label: "Primary Role", value: profile.title },
           { label: "Pedagogy Focus", value: "Concept-First Tuition" },
           { label: "Practice Base", value: profile.location },
         ]}
@@ -51,8 +49,8 @@ export default function AboutPage() {
                 <Image
                   src={profile.portrait}
                   alt={profile.portraitAlt}
-                  width={600}
-                  height={750}
+                  width={1086}
+                  height={1448}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 420px"
                   className="w-full h-full object-cover"
                 />
@@ -74,7 +72,7 @@ export default function AboutPage() {
                 >
                   {[
                     ["Name", profile.name],
-                    ["Specialization", "Commerce & Accounting Educator"],
+                    ["Specialization", profile.title],
                     ["Subjects", "Accounting, Costing & Taxation"],
                     ["Location", profile.location],
                   ].map(([label, value]) => (

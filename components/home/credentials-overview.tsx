@@ -55,7 +55,7 @@ export function CredentialsOverview() {
             </div>
 
             <div className="mt-6">
-              <Link href="/experience" className="btn-secondary inline-flex items-center gap-2 text-sm">
+              <Link href="/experience" className="btn-secondary text-sm">
                 <span>View Full Academic &amp; Career Journey</span>
                 <ArrowRight size={14} />
               </Link>

@@ -32,14 +32,14 @@ export default function Error({
           <button
             type="button"
             onClick={() => reset()}
-            className="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm !py-2.5 !px-5 cursor-pointer"
+            className="btn-primary w-full sm:w-auto text-sm !py-2.5 !px-5"
           >
             <RefreshCw size={16} />
             <span>Try Again</span>
           </button>
           <Link
             href="/"
-            className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm !py-2.5 !px-5"
+            className="btn-secondary w-full sm:w-auto text-sm !py-2.5 !px-5"
           >
             <Home size={16} />
             <span>Return Home</span>

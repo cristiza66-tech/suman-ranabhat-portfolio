@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Mail, Phone, MapPin, MessageSquare, ShieldCheck } from "lucide-react";
 import { profile, faqs } from "@/data/profile";
-import { pageSeo, buildPageMetadata, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { pageSeo, buildPageMetadata, generateFaqSchema, generateBreadcrumbSchema, siteConfig } from "@/data/seo";
+import { JsonLd } from "@/components/json-ld";
 import { ContactForm, ContactFormFromQuery } from "@/components/contact-form";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -17,14 +18,8 @@ export default function ContactPage() {
 
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
-      />
+      <JsonLd data={faqJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
 
       {/* Main Contact Grid — no hero, sits directly under navbar */}
       <section
@@ -138,7 +133,7 @@ export default function ContactPage() {
                     href={profile.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary w-full justify-center"
+                    className="btn-primary w-full"
                   >
                     <MessageSquare size={15} />
                     <span>Chat on WhatsApp</span>
@@ -194,9 +189,9 @@ export default function ContactPage() {
           />
 
           <div className="max-w-3xl mx-auto flex flex-col gap-3.5">
-            {faqs.map((faq, idx) => (
+            {faqs.map((faq) => (
               <div
-                key={idx}
+                key={faq.question}
                 className="rounded-lg border p-5"
                 style={{ backgroundColor: "var(--color-bg)", borderColor: "var(--color-border)" }}
               >

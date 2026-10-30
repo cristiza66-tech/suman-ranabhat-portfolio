@@ -7,27 +7,17 @@ import type { Metadata } from "next";
 import { profile } from "@/data/profile";
 
 export const siteConfig = {
-  siteName: profile.name,
-  personName: profile.name,
-  jobTitle: profile.title,
   siteUrl: (process.env.NEXT_PUBLIC_SITE_URL || "https://sumanranabhat.com").replace(/\/$/, ""),
   locale: "en_US",
-  location: {
-    locality: "Pokhara",
-    region: "Gandaki Province",
-    country: "Nepal",
-    countryCode: "NP",
-    addressString: "Pokhara, Gandaki Province, Nepal",
-  },
-  contact: {
-    phone: profile.phone,
-    telephone: profile.phoneTel,
-    whatsapp: profile.phoneTel,
-    email: profile.email,
-  },
-  social: [profile.whatsappUrl],
   defaultOgImage: "/images/suman-ranabhat.png",
 } as const;
+
+const postalAddress = {
+  "@type": "PostalAddress",
+  addressLocality: "Pokhara",
+  addressRegion: "Gandaki Province",
+  addressCountry: "NP",
+};
 
 /**
  * Shared Open Graph / Twitter fields. Metadata objects merge shallowly,
@@ -37,12 +27,12 @@ export const siteConfig = {
 export const baseOpenGraph = {
   type: "website",
   locale: siteConfig.locale,
-  siteName: siteConfig.siteName,
+  siteName: profile.name,
   images: [
     {
       url: siteConfig.defaultOgImage,
-      width: 768,
-      height: 1024,
+      width: 1086,
+      height: 1448,
       alt: `${profile.name} - ${profile.title} in Pokhara, Nepal`,
     },
   ],
@@ -65,7 +55,7 @@ export function buildPageMetadata(page: { title: string; description: string; ke
   };
 }
 
-export const defaultKeywords = [
+const defaultKeywords = [
   "Suman Ranabhat",
   "Commerce & Accounting Educator",
   "Commerce Educator Pokhara",
@@ -167,19 +157,14 @@ export function generatePersonSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: siteConfig.personName,
-    jobTitle: siteConfig.jobTitle,
+    name: profile.name,
+    jobTitle: profile.title,
     description:
       "Dedicated Commerce & Accounting Educator based in Pokhara, Nepal, helping school and college students build strong fundamentals and achieve better results.",
     url: siteConfig.siteUrl,
-    telephone: siteConfig.contact.telephone,
+    telephone: profile.phoneTel,
     image: `${siteConfig.siteUrl}${siteConfig.defaultOgImage}`,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: siteConfig.location.locality,
-      addressRegion: siteConfig.location.region,
-      addressCountry: siteConfig.location.countryCode,
-    },
+    address: postalAddress,
     knowsAbout: [
       "Financial Accounting",
       "Corporate Taxation",
@@ -189,9 +174,6 @@ export function generatePersonSchema() {
       "Commercial Laws",
       "Academic Tuition & Commerce Education",
     ],
-    ...(siteConfig.social.filter((url) => !url.includes("wa.me")).length > 0
-      ? { sameAs: siteConfig.social.filter((url) => !url.includes("wa.me")) }
-      : {}),
   };
 }
 
@@ -211,14 +193,9 @@ export function generateCourseListSchema(courses: Array<{ title: string; descrip
         description: c.description,
         provider: {
           "@type": "Person",
-          name: siteConfig.personName,
-          jobTitle: siteConfig.jobTitle,
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: siteConfig.location.locality,
-            addressRegion: siteConfig.location.region,
-            addressCountry: siteConfig.location.countryCode,
-          },
+          name: profile.name,
+          jobTitle: profile.title,
+          address: postalAddress,
         },
         educationalLevel: c.level,
         audience: {
@@ -267,20 +244,15 @@ export function generateFaqSchema(faqs: Array<{ question: string; answer: string
 /**
  * Generate Schema.org JSON-LD ProfessionalService / Service List Structured Data
  */
-export function generateServicesSchema(services: Array<{ title: string; shortDesc: string; targetClients: string }>) {
+export function generateServicesSchema(services: Array<{ title: string; shortDesc: string }>) {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: `${siteConfig.personName} — Commerce & Accounting Educator`,
+    name: `${profile.name} — ${profile.title}`,
     description: "Professional accounting, taxation, and financial advisory services in Pokhara, Nepal.",
     url: `${siteConfig.siteUrl}/services`,
-    telephone: siteConfig.contact.telephone,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: siteConfig.location.locality,
-      addressRegion: siteConfig.location.region,
-      addressCountry: siteConfig.location.countryCode,
-    },
+    telephone: profile.phoneTel,
+    address: postalAddress,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Accounting & Advisory Services",

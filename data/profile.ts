@@ -8,7 +8,6 @@ export type EducationOffering = {
   targetAudience: string;
   description: string;
   highlights: string[];
-  duration?: string;
   mode: "In-Person" | "Online" | "Hybrid";
 };
 
@@ -17,7 +16,7 @@ export type CAService = {
   title: string;
   shortDesc: string;
   fullDesc: string;
-  icon: "calculator" | "receipt" | "chart" | "shield-check" | "briefcase" | "scale";
+  icon: "calculator" | "receipt" | "shield-check" | "briefcase";
   deliverables: string[];
   targetClients: string;
 };
@@ -27,7 +26,6 @@ export type TeachingPrinciple = {
   title: string;
   tagline: string;
   description: string;
-  quote?: string;
 };
 
 export type Qualification = {
@@ -56,7 +54,6 @@ export type Testimonial = {
   author: string;
   designation: string;
   context?: string;
-  isPlaceholder?: boolean;
 };
 
 export type FAQ = {
@@ -68,6 +65,8 @@ export type FAQ = {
 // ==========================================
 // CENTRAL PROFILE DATA CONFIGURATION
 // ==========================================
+const whatsappNumber = "9779805864812";
+
 export const profile = {
   name: "Suman Ranabhat",
   initials: "SR",
@@ -78,42 +77,24 @@ export const profile = {
   location: "Pokhara, Gandaki Province, Nepal",
   email: "",
   phone: "+977 9805864812",
-  phoneRaw: "9805864812",
   phoneTel: "+9779805864812",
   whatsapp: "+977 9805864812",
-  whatsappNumber: "9779805864812",
-  whatsappUrl: "https://wa.me/9779805864812",
+  whatsappNumber,
+  whatsappUrl: `https://wa.me/${whatsappNumber}`,
   officeAddress: "Pokhara, Gandaki Province, Nepal",
   portrait: "/images/suman-ranabhat.png",
   portraitAlt: "Suman Ranabhat - Commerce & Accounting Educator in Pokhara, Nepal",
   summary:
     "Commerce & Accounting Educator in Pokhara, Nepal — guiding Class 11/12 and undergraduate students with concept-first teaching and structured exam preparation.",
-  heroStatement:
-    "Clear concepts. Strong fundamentals. Better results.",
-  bio: "Commerce & Accounting Educator in Pokhara, Nepal with expertise in accounting principles, taxation, and financial analysis. Helping secondary and undergraduate students build genuine conceptual understanding — not rote memorization — so they excel in exams and beyond.",
-  teachingPhilosophySummary:
-    "Concepts understood from first principles outlast any formula memorized for exam day.",
-  servicePhilosophySummary:
-    "Technical accuracy, practical foresight, and strict integrity — the foundation of every advisory engagement.",
-  social: [
-    { label: "WhatsApp", href: "https://wa.me/9779805864812" },
-  ],
 } as const;
 
+// Shared by the header and footer. Home is omitted: the logo links home.
 export const navigation: LinkItem[] = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Education & Tuition", href: "/education" },
-  { label: "Accounting Services", href: "/services" },
+  { label: "Subjects", href: "/education" },
+  { label: "Services", href: "/services" },
   { label: "Experience", href: "/experience" },
   { label: "Contact", href: "/contact" },
-];
-
-export const quickStats = [
-  { label: "Teaching Focus", value: "Commerce & Accounts", detail: "+2 & Bachelor levels" },
-  { label: "Core Methodology", value: "Concept First", detail: "Logic before formulas" },
-  { label: "Student Guidance", value: "Personal Attention", detail: "Small interactive batches" },
-  { label: "Availability", value: "Active Batches", detail: "Tuition & mentoring inquiries open" },
 ];
 
 export const teachingPrinciples: TeachingPrinciple[] = [
@@ -365,7 +346,6 @@ export const testimonials: Testimonial[] = [
     author: "Commerce Student",
     designation: "Class 12 / BBS Aspirant",
     context: "Accountancy & Taxation Batch",
-    isPlaceholder: false,
   },
   {
     id: "t2",
@@ -375,7 +355,6 @@ export const testimonials: Testimonial[] = [
     author: "Business Client",
     designation: "Managing Director / Business Owner",
     context: "Tax & Financial Advisory",
-    isPlaceholder: false,
   },
   {
     id: "t3",
@@ -385,7 +364,6 @@ export const testimonials: Testimonial[] = [
     author: "BBS Commerce Student",
     designation: "Bachelor Level Candidate",
     context: "Academic Mentorship Cohort",
-    isPlaceholder: false,
   },
 ];
 

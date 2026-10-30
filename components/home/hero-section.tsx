@@ -45,7 +45,7 @@ export function HeroSection() {
             >
               <span className="inline-flex items-center gap-1.5">
                 <GraduationCap size={18} style={{ color: "var(--color-gold)" }} />
-                <span>Commerce &amp; Accounting Educator</span>
+                <span>{profile.title}</span>
               </span>
               <span
                 className="hidden sm:inline font-light"
@@ -72,7 +72,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-6 w-full sm:w-auto">
               <Link
                 href="/education"
-                className="btn-secondary justify-center text-sm"
+                className="btn-secondary text-sm"
               >
                 <GraduationCap size={16} />
                 <span>Explore Tuition &amp; Subjects</span>
@@ -80,7 +80,7 @@ export function HeroSection() {
               </Link>
               <a
                 href={`tel:${profile.phoneTel}`}
-                className="btn-primary justify-center text-sm"
+                className="btn-primary text-sm"
               >
                 <Phone size={16} />
                 <span>Call Now</span>
@@ -133,9 +133,9 @@ export function HeroSection() {
                 <Image
                   src={profile.portrait}
                   alt={profile.portraitAlt}
-                  width={600}
-                  height={750}
-                  priority
+                  width={1086}
+                  height={1448}
+                  preload
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 440px"
                   className="w-full h-full object-cover"
                 />
@@ -156,7 +156,7 @@ export function HeroSection() {
                     className="text-xs font-bold tracking-wider uppercase"
                     style={{ color: "var(--color-fg-light)" }}
                   >
-                    Commerce &amp; Accounting Educator
+                    {profile.title}
                   </span>
                 </div>
 

@@ -63,8 +63,8 @@ export function PageHero({
               className="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-7 mt-7 border-t"
               style={{ borderColor: "var(--color-border)" }}
             >
-              {metaList.map((item, idx) => (
-                <div key={idx} className="flex flex-col">
+              {metaList.map((item) => (
+                <div key={item.label} className="flex flex-col">
                   <span
                     className="text-xs uppercase tracking-wider font-semibold"
                     style={{ color: "var(--color-fg-muted)" }}

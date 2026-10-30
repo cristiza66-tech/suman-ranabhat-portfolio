@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Check, HelpCircle, ArrowUpRight, GraduationCap, Users, Video, Clock } from "lucide-react";
+import { Check, ArrowUpRight, GraduationCap, Users, Video, Clock } from "lucide-react";
 import { educationOfferings, teachingPrinciples, faqs } from "@/data/profile";
-import { pageSeo, buildPageMetadata, generateCourseListSchema, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { pageSeo, buildPageMetadata, generateCourseListSchema, generateFaqSchema, generateBreadcrumbSchema, siteConfig } from "@/data/seo";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactForm } from "@/components/contact-form";
+import { FaqList } from "@/components/faq-list";
 
 export const metadata: Metadata = buildPageMetadata(pageSeo.education);
 
@@ -21,18 +23,9 @@ export default function EducationPage() {
 
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(courseJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
-      />
+      <JsonLd data={courseJsonLd} />
+      <JsonLd data={faqJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <PageHero
         eyebrow="Tuition & Accounting Education in Pokhara"
         title="Commerce & Accounting Tuition for School and College Students"
@@ -168,9 +161,9 @@ export default function EducationPage() {
                       Key Learning Highlights:
                     </p>
                     <ul className="flex flex-col gap-2">
-                      {course.highlights.map((h, i) => (
+                      {course.highlights.map((h) => (
                         <li
-                          key={i}
+                          key={h}
                           className="flex items-start gap-2 text-xs"
                           style={{ color: "var(--color-fg-secondary)" }}
                         >
@@ -289,29 +282,7 @@ export default function EducationPage() {
             align="center"
           />
 
-          <div className="max-w-3xl mx-auto flex flex-col gap-3.5">
-            {educationFaqs.map((faq, idx) => (
-              <div
-                key={idx}
-                className="rounded-lg border p-5"
-                style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
-              >
-                <h3
-                  className="text-sm font-bold flex items-start gap-2"
-                  style={{ color: "var(--color-fg)" }}
-                >
-                  <HelpCircle size={16} className="shrink-0 mt-0.5" style={{ color: "var(--color-gold)" }} />
-                  <span>{faq.question}</span>
-                </h3>
-                <p
-                  className="text-sm mt-2 pl-6 leading-relaxed"
-                  style={{ color: "var(--color-fg-secondary)" }}
-                >
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
+          <FaqList faqs={educationFaqs} />
         </div>
       </section>
 

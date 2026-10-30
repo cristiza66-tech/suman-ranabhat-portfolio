@@ -1,15 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
-import { profile, services, educationOfferings } from "@/data/profile";
-
-// Compact footer nav — trimmed labels matching the header
-const footerNav = [
-  { label: "About", href: "/about" },
-  { label: "Subjects", href: "/education" },
-  { label: "Services", href: "/services" },
-  { label: "Experience", href: "/experience" },
-  { label: "Contact", href: "/contact" },
-];
+import { profile, services, educationOfferings, navigation } from "@/data/profile";
 
 export function SiteFooter() {
   return (
@@ -29,7 +20,7 @@ export function SiteFooter() {
         >
           <div className="lg:col-span-8">
             <span className="eyebrow-badge dark mb-3">
-              Commerce &amp; Accounting Educator · Tuition &amp; Classes
+              {`${profile.title} · Tuition & Classes`}
             </span>
             <p
               className="text-xl sm:text-2xl font-bold tracking-tight mt-2 max-w-xl"
@@ -45,14 +36,13 @@ export function SiteFooter() {
             </p>
           </div>
           <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-2.5">
-            <Link href="/contact?type=tuition" className="btn-gold justify-center text-sm">
+            <Link href="/contact?type=tuition" className="btn-gold text-sm">
               <span>Enquire about tuition</span>
               <ArrowUpRight size={15} aria-hidden="true" />
             </Link>
             <Link
               href="/contact?type=services"
-              className="btn-dark-secondary inline-flex items-center justify-center gap-2 rounded-[10px] text-sm font-semibold text-center"
-              style={{ padding: "0.6rem 1.2rem" }}
+              className="btn-dark-secondary"
             >
               <span>Discuss accounting work</span>
             </Link>
@@ -88,7 +78,7 @@ export function SiteFooter() {
                   className="text-xs"
                   style={{ color: "var(--color-dark-fg-muted)" }}
                 >
-                  Commerce &amp; Accounting Educator
+                  {profile.title}
                 </span>
               </div>
             </div>
@@ -204,7 +194,7 @@ export function SiteFooter() {
               Navigation
             </h3>
             <ul className="flex flex-col gap-1 text-sm" style={{ color: "var(--color-dark-fg-muted)" }}>
-              {footerNav.map((item) => (
+              {navigation.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}

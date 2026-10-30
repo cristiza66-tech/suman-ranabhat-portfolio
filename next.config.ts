@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const securityHeaders = [
   {
     key: "X-Content-Type-Options",
@@ -29,7 +31,8 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+      // React needs eval only in development (debug stack reconstruction).
+      `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https:",
       "font-src 'self' data:",
@@ -38,14 +41,12 @@ const securityHeaders = [
       "base-uri 'self'",
       "form-action 'self'",
       "frame-ancestors 'none'",
-      "block-all-mixed-content",
       "upgrade-insecure-requests",
     ].join("; "),
   },
 ];
 
 const nextConfig: NextConfig = {
-  compress: true,
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],

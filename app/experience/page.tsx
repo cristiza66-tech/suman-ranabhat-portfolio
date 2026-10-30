@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Award, Check, ArrowRight, ShieldCheck } from "lucide-react";
-import { experienceTimeline, qualifications } from "@/data/profile";
-import { pageSeo, buildPageMetadata, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { profile, experienceTimeline, qualifications } from "@/data/profile";
+import { pageSeo, buildPageMetadata, generateBreadcrumbSchema, siteConfig } from "@/data/seo";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -16,10 +17,7 @@ export default function ExperiencePage() {
 
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
-      />
+      <JsonLd data={breadcrumbJsonLd} />
       <PageHero
         eyebrow="Timeline & Career"
         title="Teaching Pathway & Professional Milestones"
@@ -27,7 +25,7 @@ export default function ExperiencePage() {
         primaryAction={{ label: "Get in Touch", href: "/contact" }}
         secondaryAction={{ label: "Explore Tuition Offerings", href: "/education" }}
         metaList={[
-          { label: "Primary Role", value: "Commerce & Accounting Educator" },
+          { label: "Primary Role", value: profile.title },
           { label: "Focus", value: "Commerce & Accounting Tuition" },
           { label: "Integrity", value: "Ethical Standards" },
         ]}
@@ -124,9 +122,9 @@ export default function ExperiencePage() {
                             className="mt-3 pt-3 border-t flex flex-col gap-1.5"
                             style={{ borderColor: "var(--color-border)" }}
                           >
-                            {item.keyContributions.map((contrib, i) => (
+                            {item.keyContributions.map((contrib) => (
                               <div
-                                key={i}
+                                key={contrib}
                                 className="flex items-start gap-2 text-xs"
                                 style={{ color: "var(--color-fg-secondary)" }}
                               >
@@ -229,7 +227,7 @@ export default function ExperiencePage() {
               Committed to staying current through participation in taxation seminars, accounting standard updates, and auditing workshops.
             </p>
             <div className="mt-6">
-              <Link href="/contact" className="btn-gold text-sm font-semibold">
+              <Link href="/contact" className="btn-gold text-sm">
                 <span>Start a Conversation</span>
                 <ArrowRight size={15} />
               </Link>

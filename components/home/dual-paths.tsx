@@ -22,7 +22,7 @@ export function DualPaths() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Path 1: Education & Tuition */}
           <div
-            className="group relative rounded-xl border p-6 sm:p-7 flex flex-col justify-between card-hover-accent"
+            className="relative rounded-xl border p-6 sm:p-7 flex flex-col justify-between card-hover-accent"
             style={{
               backgroundColor: "var(--color-surface)",
               borderColor: "var(--color-border)",
@@ -91,7 +91,7 @@ export function DualPaths() {
             </div>
 
             <div className="mt-6 pt-5 border-t" style={{ borderColor: "var(--color-border)" }}>
-              <Link href="/education" className="btn-primary w-full justify-between">
+              <Link href="/education" className="btn-primary w-full">
                 <span>Explore Education &amp; Courses</span>
                 <ArrowRight size={16} />
               </Link>
@@ -100,7 +100,7 @@ export function DualPaths() {
 
           {/* Path 2: Accounting & Advisory Services */}
           <div
-            className="group relative rounded-xl border p-6 sm:p-7 flex flex-col justify-between card-hover-gold"
+            className="relative rounded-xl border p-6 sm:p-7 flex flex-col justify-between card-hover-gold"
             style={{
               backgroundColor: "var(--color-dark-bg)",
               borderColor: "var(--color-dark-border)",
@@ -174,7 +174,7 @@ export function DualPaths() {
               className="mt-6 pt-5 border-t"
               style={{ borderColor: "var(--color-dark-border)" }}
             >
-              <Link href="/services" className="btn-gold w-full justify-between">
+              <Link href="/services" className="btn-gold w-full">
                 <span>Explore Accounting Services</span>
                 <ArrowRight size={16} />
               </Link>

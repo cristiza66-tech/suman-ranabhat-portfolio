@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { profile } from "@/data/profile";
-import { siteConfig, pageSeo, baseOpenGraph, baseTwitter, generatePersonSchema, safeJsonLd } from "@/data/seo";
+import { siteConfig, pageSeo, baseOpenGraph, baseTwitter, generatePersonSchema } from "@/data/seo";
+import { JsonLd } from "@/components/json-ld";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
@@ -12,10 +13,12 @@ const geistSans = Geist({
   display: "swap",
 });
 
+// Only used for the step numbers on /education and /services, so don't preload it on every page.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 export const viewport: Viewport = {
@@ -76,10 +79,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
-        />
+        <JsonLd data={jsonLd} />
       </head>
       <body className="min-h-full flex flex-col font-sans">
         <a href="#main" className="skip-link">

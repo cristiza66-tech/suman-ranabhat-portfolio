@@ -91,7 +91,7 @@ export default function HomePage() {
                       className="text-xs"
                       style={{ color: "var(--color-fg-muted)" }}
                     >
-                      Commerce &amp; Accounting Educator
+                      {profile.title}
                     </span>
                   </div>
                   <span

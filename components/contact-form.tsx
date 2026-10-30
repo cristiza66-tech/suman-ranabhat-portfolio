@@ -267,7 +267,7 @@ export function ContactForm({ defaultTab = "tuition" }: ContactFormProps) {
           </p>
           <button
             type="submit"
-            className="btn-primary w-full sm:w-auto shrink-0 text-sm py-3! px-6! cursor-pointer"
+            className="btn-primary w-full sm:w-auto shrink-0 text-sm py-3! px-6!"
           >
             <MessageSquare size={16} aria-hidden="true" />
             <span>Continue on WhatsApp</span>

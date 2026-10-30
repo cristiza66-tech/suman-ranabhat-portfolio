@@ -35,7 +35,7 @@ export function CtaBanner() {
           <div className="flex flex-col sm:flex-row items-center gap-3 mt-6 w-full sm:w-auto">
             <Link
               href="/contact?type=tuition"
-              className="btn-gold w-full sm:w-auto justify-center font-semibold"
+              className="btn-gold w-full sm:w-auto"
             >
               <GraduationCap size={16} aria-hidden="true" />
               <span>Enquire about tuition</span>
@@ -43,8 +43,7 @@ export function CtaBanner() {
             </Link>
             <Link
               href="/contact?type=services"
-              className="btn-dark-secondary inline-flex items-center justify-center gap-2 rounded-[10px] text-sm font-semibold w-full sm:w-auto text-center"
-              style={{ padding: "0.6rem 1.2rem" }}
+              className="btn-dark-secondary w-full sm:w-auto"
             >
               <span>Discuss accounting work</span>
               <ArrowUpRight size={15} aria-hidden="true" />

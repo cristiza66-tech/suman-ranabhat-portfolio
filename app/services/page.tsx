@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Receipt, Calculator, ShieldCheck, Briefcase, Check, ArrowUpRight, Scale, Lock, HelpCircle } from "lucide-react";
-import { services, faqs } from "@/data/profile";
-import { pageSeo, buildPageMetadata, generateServicesSchema, generateFaqSchema, generateBreadcrumbSchema, safeJsonLd, siteConfig } from "@/data/seo";
+import { Receipt, Calculator, ShieldCheck, Briefcase, Check, ArrowUpRight, Lock, type LucideIcon } from "lucide-react";
+import { profile, services, faqs, type CAService } from "@/data/profile";
+import { pageSeo, buildPageMetadata, generateServicesSchema, generateFaqSchema, generateBreadcrumbSchema, siteConfig } from "@/data/seo";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactForm } from "@/components/contact-form";
+import { FaqList } from "@/components/faq-list";
 
 export const metadata: Metadata = buildPageMetadata(pageSeo.services);
 
-const serviceIcons = {
+const serviceIcons: Record<CAService["icon"], LucideIcon> = {
   receipt: Receipt,
   calculator: Calculator,
   "shield-check": ShieldCheck,
   briefcase: Briefcase,
-  chart: Calculator,
-  scale: Scale,
 };
 
 export default function ServicesPage() {
@@ -30,18 +30,9 @@ export default function ServicesPage() {
 
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(servicesJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
-      />
+      <JsonLd data={servicesJsonLd} />
+      <JsonLd data={faqJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <PageHero
         eyebrow="Accounting & Advisory Practice"
         title="Professional Financial & Advisory Services"
@@ -49,7 +40,7 @@ export default function ServicesPage() {
         primaryAction={{ label: "Request Consultation", href: "#service-inquiry" }}
         secondaryAction={{ label: "Explore Service Scope", href: "#services-catalog" }}
         metaList={[
-          { label: "Specialist", value: "Commerce & Accounting Educator" },
+          { label: "Specialist", value: profile.title },
           { label: "Focus", value: "Tax, Audit & Accounting" },
           { label: "Standards", value: "NFRS / IFRS / Local Laws" },
         ]}
@@ -71,7 +62,7 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {services.map((svc) => {
-              const IconComp = serviceIcons[svc.icon] || Briefcase;
+              const IconComp = serviceIcons[svc.icon];
               return (
                 <div
                   key={svc.id}
@@ -132,9 +123,9 @@ export default function ServicesPage() {
                         Core Deliverables &amp; Scope:
                       </p>
                       <ul className="flex flex-col gap-2">
-                        {svc.deliverables.map((deliv, i) => (
+                        {svc.deliverables.map((deliv) => (
                           <li
-                            key={i}
+                            key={deliv}
                             className="flex items-start gap-2 text-xs"
                             style={{ color: "var(--color-fg-secondary)" }}
                           >
@@ -271,29 +262,7 @@ export default function ServicesPage() {
             align="center"
           />
 
-          <div className="max-w-3xl mx-auto flex flex-col gap-3.5">
-            {serviceFaqs.map((faq, idx) => (
-              <div
-                key={idx}
-                className="rounded-lg border p-5"
-                style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
-              >
-                <h3
-                  className="text-sm font-bold flex items-start gap-2"
-                  style={{ color: "var(--color-fg)" }}
-                >
-                  <HelpCircle size={16} className="shrink-0 mt-0.5" style={{ color: "var(--color-gold)" }} />
-                  <span>{faq.question}</span>
-                </h3>
-                <p
-                  className="text-sm mt-2 pl-6 leading-relaxed"
-                  style={{ color: "var(--color-fg-secondary)" }}
-                >
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
+          <FaqList faqs={serviceFaqs} />
         </div>
       </section>
 

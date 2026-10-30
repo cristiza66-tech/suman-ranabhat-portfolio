@@ -92,7 +92,7 @@ npm run start
 
 - **Profile & Content**: Update contact coordinates, bios, services, courses, and FAQs in [`data/profile.ts`](data/profile.ts).
 - **SEO & Structured Data**: Update site title, keywords, and canonical settings in [`data/seo.ts`](data/seo.ts).
-- **Portrait Photo**: Replace [`public/images/portrait.svg`](public/images/portrait.svg) with a high-resolution JPG/PNG and update `profile.portrait` in `data/profile.ts`.
+- **Portrait Photo**: Replace [`public/images/suman-ranabhat.png`](public/images/suman-ranabhat.png) (also used as the social preview image) and update `profile.portrait` in `data/profile.ts` and `defaultOgImage` in `data/seo.ts` if the filename changes.
 
 ---
 

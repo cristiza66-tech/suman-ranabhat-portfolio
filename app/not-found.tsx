@@ -22,14 +22,14 @@ export default function NotFound() {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             href="/"
-            className="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm !py-2.5 !px-5"
+            className="btn-primary w-full sm:w-auto text-sm !py-2.5 !px-5"
           >
             <Home size={16} />
             <span>Back to Home</span>
           </Link>
           <Link
             href="/contact"
-            className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm !py-2.5 !px-5"
+            className="btn-secondary w-full sm:w-auto text-sm !py-2.5 !px-5"
           >
             <ArrowLeft size={16} />
             <span>Contact &amp; Inquiries</span>
